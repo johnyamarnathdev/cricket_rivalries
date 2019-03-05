@@ -1,0 +1,78 @@
+[
+	{
+		"matchId": 1,
+		"tournamentId": 1,
+		"phaseId": 1,
+		"matchDate": "01/03/2019",
+		"team1": {
+			"teamId": 1,
+			"name": "Chennai super kings",
+			"nickName": "Chennai"
+		},
+		"team2": {
+			"teamId": 2,
+			"name": "Rajastan Royals",
+			"nickName": "Rajastan"
+		},
+		"teamSelectionCutoffTime": 1551753196,
+		"isPointsCalculated": false,
+		"matchType": "T20"
+	},
+	{
+		"matchId": 2,
+		"tournamentId": 1,
+		"phaseId": 1,
+		"matchDate": "02/03/2019",
+		"team1": {
+			"teamId": 3,
+			"name": "Royal Challengers",
+			"nickName": "Bangalore"
+		},
+		"team2": {
+			"teamId": 4,
+			"name": "Delhi Daredevils",
+			"nickName": "Delhi"
+		},
+		"teamSelectionCutoffTime": 1551753196,
+		"isPointsCalculated": false,
+		"matchType": "T20"
+	},
+	{
+		"matchId": 3,
+		"tournamentId": 1,
+		"phaseId": 1,
+		"matchDate": "03/03/2019",
+		"team1": {
+			"teamId": 5,
+			"name": "Punjab",
+			"nickName": "Pubjab"
+		},
+		"team2": {
+			"teamId": 6,
+			"name": "Mumbai Indians",
+			"nickName": "Mumbai"
+		},
+		"teamSelectionCutoffTime": 1551753196,
+		"isPointsCalculated": false,
+		"matchType": "T20"
+	},
+	{
+		"matchId": 4,
+		"tournamentId": 1,
+		"phaseId": 1,
+		"matchDate": "04/03/2019",
+		"team1": {
+			"teamId": 7,
+			"name": "Kolkatta Knight Raiders",
+			"nickName": "Kolkatta"
+		},
+		"team2": {
+			"teamId": 8,
+			"name": "Sunrisers Hyderabad",
+			"nickName": "Hyderabad"
+		},
+		"teamSelectionCutoffTime": 1551753196,
+		"isPointsCalculated": false,
+		"matchType": "T20"
+	}
+]
