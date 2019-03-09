@@ -1,5 +1,5 @@
 module.exports = function () {
     return {
-        "tournamentmatchesmock": require('./tournamentmatchesmock.json')
+        "tournamentmatches": require('./tournamentmatchesmock.json')
     }
 }

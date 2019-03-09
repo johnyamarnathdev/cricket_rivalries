@@ -7,7 +7,12 @@ import {
   MatIconModule,
   MatCardModule,
   MatFormFieldModule,
-  MatInputModule 
+  MatInputModule,
+  MatTabsModule,
+  MatTableModule,
+  MatOptionModule,
+  MatSelectModule,
+  MatSortModule
 } from '@angular/material';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -21,7 +26,12 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
-    FlexLayoutModule 
+    MatTabsModule,
+    MatTableModule,
+    MatOptionModule,
+    MatSelectModule,
+    MatSortModule,
+    FlexLayoutModule
   ],
   exports: [
     MatButtonModule,
@@ -31,6 +41,11 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
+    MatTabsModule,
+    MatTableModule,
+    MatOptionModule,
+    MatSelectModule,
+    MatSortModule,
     FlexLayoutModule 
   ]
 })
