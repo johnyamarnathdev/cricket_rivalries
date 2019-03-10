@@ -1,0 +1,138 @@
+[
+    {
+        "id": 1,
+        "userProfile": {
+            "profileId": 1,
+            "username": "kalakaleleven",
+            "firstName": "Johny Amarnath",
+            "lastName": "Thangadurai",
+            "emailId": "random@email.com"
+        },
+        "tournament": {
+            "tournamentId": 1,
+            "name": "IPL2019",
+            "startDate": "2012-04-23"
+        },
+        "points": 2456,
+        "rank": 1
+    },
+    {
+        "id": 2,
+        "userProfile": {
+            "profileId": 2,
+            "username": "test2",
+            "firstName": "Test2",
+            "lastName": "Test2",
+            "emailId": "random@email.com"
+        },
+        "tournament": {
+            "tournamentId": 2,
+            "name": "IPL2019",
+            "startDate": "2012-04-23"
+        },
+        "points": 2456,
+        "rank": 2
+    },
+    {
+        "id": 3,
+        "userProfile": {
+            "profileId": 3,
+            "username": "test3",
+            "firstName": "Test3",
+            "lastName": "Test3",
+            "emailId": "random@email.com"
+        },
+        "tournament": {
+            "tournamentId": 3,
+            "name": "IPL2019",
+            "startDate": "2012-04-23"
+        },
+        "points": 2456,
+        "rank": 3
+    },
+    {
+        "id": 4,
+        "userProfile": {
+            "profileId": 4,
+            "username": "test4",
+            "firstName": "Test4",
+            "lastName": "Test4",
+            "emailId": "random@email.com"
+        },
+        "tournament": {
+            "tournamentId": 4,
+            "name": "IPL2019",
+            "startDate": "2012-04-23"
+        },
+        "points": 2456,
+        "rank": 4
+    },
+    {
+        "id": 5,
+        "userProfile": {
+            "profileId": 5,
+            "username": "test5",
+            "firstName": "Test5",
+            "lastName": "Test5",
+            "emailId": "random@email.com"
+        },
+        "tournament": {
+            "tournamentId": 5,
+            "name": "IPL2019",
+            "startDate": "2012-04-23"
+        },
+        "points": 2456,
+        "rank": 5
+    },
+    {
+        "id": 6,
+        "userProfile": {
+            "profileId": 6,
+            "username": "test6",
+            "firstName": "Test6",
+            "lastName": "Test6",
+            "emailId": "random@email.com"
+        },
+        "tournament": {
+            "tournamentId": 6,
+            "name": "IPL2019",
+            "startDate": "2012-04-23"
+        },
+        "points": 2456,
+        "rank": 6
+    },
+    {
+        "id": 7,
+        "userProfile": {
+            "profileId": 7,
+            "username": "test7",
+            "firstName": "Test7",
+            "lastName": "Test7",
+            "emailId": "random@email.com"
+        },
+        "tournament": {
+            "tournamentId": 7,
+            "name": "IPL2019",
+            "startDate": "2012-04-23"
+        },
+        "points": 2456,
+        "rank": 7
+    },
+    {
+        "id": 8,
+        "userProfile": {
+            "profileId": 8,
+            "username": "test8",
+            "firstName": "Test8",
+            "lastName": "Test8",
+            "emailId": "random@email.com"
+        },
+        "tournament": {
+            "tournamentId": 8,
+            "name": "IPL2019",
+            "startDate": "2012-04-23"
+        },
+        "points": 2456,
+        "rank": 8
+    }
+]

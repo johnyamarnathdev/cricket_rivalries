@@ -7,6 +7,7 @@ import { LeagueComponent } from './pages/league/league.component';
 import { RulesComponent } from './pages/rules/rules.component';
 import { UserMatchComponent } from './pages/user-match/user-match.component';
 import { PlayersComponent } from './pages/players/players.component';
+import { OverallPointsResolverService } from './pages/league/overall-points-resolver.service';
 
 const routes: Routes = [
   {
@@ -19,7 +20,10 @@ const routes: Routes = [
   },
   {
     path: 'league',
-    component: LeagueComponent
+    component: LeagueComponent,
+    resolve: {
+      overallUserPoints: OverallPointsResolverService
+    }
   },
   {
     path: 'rules',

@@ -1,0 +1,24 @@
+[
+    {
+        "phaseId": 1,
+        "phaseNo": 1,
+        "tournament": {
+            "tournamentId": 1,
+            "name": "IPL2019",
+            "startDate": "2012-04-23"
+        },
+        "startDate": "2012-04-23",
+        "endDate": "2012-04-23"
+    },
+    {
+        "phaseId": 2,
+        "phaseNo": 2,
+        "tournament": {
+            "tournamentId": 1,
+            "name": "IPL2019",
+            "startDate": "2012-04-23"
+        },
+        "startDate": "2012-04-23",
+        "endDate": "2012-04-23"
+    }
+]

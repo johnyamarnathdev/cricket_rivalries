@@ -5,9 +5,8 @@ export class UserTournamentPoints {
   id: number;
   userProfile: UserProfile;
   tournament: Tournament;
-  userName: string;
-  firstName: string;
-  lastName: string;
+  points: number;
+  rank: number;
 
   constructor(values: Object = {}) {
     Object.assign(this, values);

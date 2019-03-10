@@ -1,6 +1,6 @@
 import { Team } from './team'
 
-export class TournamentMatches {
+export class TournamentMatch {
     matchId: number;
     tournamentId: number;
     phaseId: number;

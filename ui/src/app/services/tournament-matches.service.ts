@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { TournamentMatches } from '../model/tournament-matches'
+import { TournamentMatch } from '../model/tournament-match'
 import { Observable, of } from 'rxjs';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, tap } from 'rxjs/operators';
 import { ErrorHandler } from './error-handler'
 
@@ -20,10 +20,10 @@ export class TournamentMatchesService {
 
   constructor(private http: HttpClient, private errorHandler: ErrorHandler) { }
 
-  getTournamentMatches(): Observable<TournamentMatches> {
-    return this.http.get<TournamentMatches>(this.url, httpOptions)
+  getTournamentMatches(): Observable<TournamentMatch> {
+    return this.http.get<TournamentMatch>(this.url, httpOptions)
       .pipe(
-        catchError(this.errorHandler.handleError<TournamentMatches>('getTournamentMatches'))
+        catchError(this.errorHandler.handleError<TournamentMatch>('getTournamentMatches'))
       );
   }
 }
