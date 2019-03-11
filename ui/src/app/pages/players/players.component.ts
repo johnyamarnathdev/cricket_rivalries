@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { MatTableDataSource } from '@angular/material';
+import {MatSort, MatTableDataSource } from '@angular/material';
+
 
 @Component({
   selector: 'app-players',
@@ -9,48 +10,36 @@ import { MatTableDataSource } from '@angular/material';
 })
 export class PlayersComponent implements OnInit {
 
-  people = [
+  players = [
     {
-      name: 'John',
-      id: 1,
-      colour: 'Green',
-      pet: 'Dog'
+      name: 'John', team: 'team1', skill: 'Batsmen', 
+      battingPoints: 12, bowlingPoints: 34, fieldingPoints: 33, bonusPoints: 10, totalPoints: 125
     },
     {
-      name: 'Sarah',
-      id: 2,
-      colour: 'Purple',
-      pet: 'Cat'
-    },
-    {
-      name: 'Lindsay',
-      id: 3,
-      colour: 'Blue',
-      pet: 'Lizard'
-    },
-    {
-      name: 'Megan',
-      id: 4,
-      colour: 'Orange',
-      pet: 'Dog'
+      name: 'Sarah', team: 'team2', skill: 'Bowler', 
+      battingPoints: 2, bowlingPoints: 74, fieldingPoints: 98, bonusPoints: 90, totalPoints: 905
     }
   ];
 
+  //dataSource = new MatTableDataSource(this.people);
+
   nameFilter = new FormControl('');
-  idFilter = new FormControl('');
-  colourFilter = new FormControl('');
-  petFilter = new FormControl('');
+  skillFilter = new FormControl('');
+  teamFilter = new FormControl('');
+ 
   dataSource = new MatTableDataSource();
-  columnsToDisplay = ['name', 'id', 'favouriteColour', 'pet'];
+  columnsToDisplay = ['name', 'team', 'skill', 'battingPoints', 'bowlingPoints', 'fieldingPoints', 'bonusPoints', 'totalPoints'];
   filterValues = {
     name: '',
-    id: '',
-    colour: '',
-    pet: ''
+    team: '',
+    skill: '',
+    battingPoints: '', bowlingPoints: '', fieldingPoints: '', bonusPoints: '', totalPoints:''
   };
 
+  @ViewChild(MatSort) sort: MatSort;
+
   constructor() {
-    this.dataSource.data = this.people;
+    this.dataSource.data = this.players;
     this.dataSource.filterPredicate = this.createFilter();
   }
 
@@ -63,36 +52,30 @@ export class PlayersComponent implements OnInit {
           this.dataSource.filter = JSON.stringify(this.filterValues);
         }
       )
-    this.idFilter.valueChanges
+    this.skillFilter.valueChanges
       .subscribe(
-        id => {
-          this.filterValues.id = id;
+        skill => {
+          this.filterValues.skill = skill;
           this.dataSource.filter = JSON.stringify(this.filterValues);
         }
       )
-    this.colourFilter.valueChanges
+    this.teamFilter.valueChanges
       .subscribe(
-        colour => {
-          this.filterValues.colour = colour;
+        team => {
+          this.filterValues.team = team;
           this.dataSource.filter = JSON.stringify(this.filterValues);
         }
       )
-    this.petFilter.valueChanges
-      .subscribe(
-        pet => {
-          this.filterValues.pet = pet;
-          this.dataSource.filter = JSON.stringify(this.filterValues);
-        }
-      )
+
+      this.dataSource.sort = this.sort;
   }
 
   createFilter(): (data: any, filter: string) => boolean {
     let filterFunction = function(data, filter): boolean {
       let searchTerms = JSON.parse(filter);
       return data.name.toLowerCase().indexOf(searchTerms.name) !== -1
-        && data.id.toString().toLowerCase().indexOf(searchTerms.id) !== -1
-        && data.colour.toLowerCase().indexOf(searchTerms.colour) !== -1
-        && data.pet.toLowerCase().indexOf(searchTerms.pet) !== -1;
+        && data.team.toString().toLowerCase().indexOf(searchTerms.team) !== -1
+        && data.skill.toLowerCase().indexOf(searchTerms.skill) !== -1;
     }
     return filterFunction;
   }
