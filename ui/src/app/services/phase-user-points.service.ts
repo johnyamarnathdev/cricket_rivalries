@@ -17,12 +17,13 @@ const httpOptions = {
 })
 export class PhaseUserPointsService {
 
-  private url = environment.apiUrl + 'phaseuserpoints';
+  private url = environment.apiUrl + 'phasepoints';
 
   constructor(private http: HttpClient, private errorHandler: ErrorHandler) { }
 
-  getPhaseUserPoints(): Observable<PhaseUserPoint> {
-    return this.http.get<PhaseUserPoint>(this.url, httpOptions)
+  getPhaseUserPoints(phaseNo: number): Observable<PhaseUserPoint> {
+    const url = `${this.url}/${phaseNo}`;
+    return this.http.get<PhaseUserPoint>(url, httpOptions)
       .pipe(
         catchError(this.errorHandler.handleError<PhaseUserPoint>('getPhaseUserPoints'))
       );

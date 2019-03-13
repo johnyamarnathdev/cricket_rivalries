@@ -8,6 +8,7 @@ import { RulesComponent } from './pages/rules/rules.component';
 import { UserMatchComponent } from './pages/user-match/user-match.component';
 import { PlayersComponent } from './pages/players/players.component';
 import { OverallPointsResolverService } from './pages/league/overall-points-resolver.service';
+import { TournamentPhasesResolverService } from './pages/league/tournament-phases-resolver.service';
 
 const routes: Routes = [
   {
@@ -22,7 +23,8 @@ const routes: Routes = [
     path: 'league',
     component: LeagueComponent,
     resolve: {
-      overallUserPoints: OverallPointsResolverService
+      overallUserPoints: OverallPointsResolverService,
+      tournamentPhases: TournamentPhasesResolverService
     }
   },
   {
