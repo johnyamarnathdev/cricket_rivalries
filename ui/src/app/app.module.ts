@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,9 +13,16 @@ import { LeagueComponent } from './pages/league/league.component';
 import { HeaderComponent } from './common-components/header/header.component';
 import { FooterComponent } from './common-components/footer/footer.component';
 import { NavBarComponent } from './common-components/nav-bar/nav-bar.component';
+import { HomeLayoutComponent } from './common-components/layouts/header.layout.component';
+import { PublicLayoutComponent } from './common-components/layouts/public.layout.component';
 import { RulesComponent } from './pages/rules/rules.component';
 import { UserMatchComponent } from './pages/user-match/user-match.component';
 import { PlayersComponent } from './pages/players/players.component';
+
+import { fakeBackendProvider } from './helpers/fake-backend';
+import { JwtInterceptor,} from './helpers/jwt.interceptor';
+import { ErrorInterceptor } from './helpers/error.interceptors';
+import { LogoutComponent } from './common-components/logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -26,9 +33,12 @@ import { PlayersComponent } from './pages/players/players.component';
     HeaderComponent,
     FooterComponent,
     NavBarComponent,
+    HomeLayoutComponent,
+    PublicLayoutComponent,
     RulesComponent,
     UserMatchComponent,
-    PlayersComponent
+    PlayersComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
@@ -36,10 +46,16 @@ import { PlayersComponent } from './pages/players/players.component';
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
-    ReactiveFormsModule,
+    FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+
+    // provider used to create fake backend
+    fakeBackendProvider
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

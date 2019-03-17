@@ -18,8 +18,8 @@ export class HomeComponent implements OnInit {
   }
 
   getUser() {
-    this.userService.getUser(1)
-      .subscribe(user => this.user = user);
+    //this.userService.getUser(1)
+    //  .subscribe(user => this.user = user);
   }
 
   getTournamentMatches() {
