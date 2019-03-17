@@ -1,25 +1,16 @@
 [
     {
         "profileId": 1,
-        "rank": 1,
+        "rank": 8,
         "userName": "kalakaleleven",
         "phaseId": 1,
         "phaseNo": 1,
-        "points": 2345,
-        "transfersLeft": 34
-    },
-    {
-        "profileId": 1,
-        "rank": 1,
-        "userName": "kalakaleleven",
-        "phaseId": 2,
-        "phaseNo": 2,
-        "points": 2345,
+        "points": 1023,
         "transfersLeft": 34
     },
     {
         "profileId": 2,
-        "rank": 2,
+        "rank": 7,
         "userName": "testuser2",
         "phaseId": 1,
         "phaseNo": 1,
@@ -27,89 +18,44 @@
         "transfersLeft": 34
     },
     {
-        "profileId": 2,
+        "profileId": 3,
+        "rank": 6,
+        "userName": "testuser3",
+        "phaseId": 1,
+        "phaseNo": 1,
+        "points": 2345,
+        "transfersLeft": 34
+    },
+    {
+        "profileId": 4,
+        "rank": 5,
+        "userName": "testuser4",
+        "phaseId": 1,
+        "phaseNo": 1,
+        "points": 2345,
+        "transfersLeft": 34
+    },
+    {
+        "profileId": 5,
+        "rank": 4,
+        "userName": "testuser5",
+        "phaseId": 1,
+        "phaseNo": 1,
+        "points": 2345,
+        "transfersLeft": 34
+    },
+    {
+        "profileId": 6,
+        "rank": 3,
+        "userName": "testuser6",
+        "phaseId": 1,
+        "phaseNo": 1,
+        "points": 2345,
+        "transfersLeft": 34
+    },
+    {
+        "profileId": 7,
         "rank": 2,
-        "userName": "testuser2",
-        "phaseId": 2,
-        "phaseNo": 2,
-        "points": 2345,
-        "transfersLeft": 34
-    },
-    {
-        "profileId": 3,
-        "rank": 3,
-        "userName": "testuser3",
-        "phaseId": 1,
-        "phaseNo": 1,
-        "points": 2345,
-        "transfersLeft": 34
-    },
-    {
-        "profileId": 3,
-        "rank": 3,
-        "userName": "testuser3",
-        "phaseId": 2,
-        "phaseNo": 2,
-        "points": 2345,
-        "transfersLeft": 34
-    },
-    {
-        "profileId": 4,
-        "rank": 4,
-        "userName": "testuser4",
-        "phaseId": 1,
-        "phaseNo": 1,
-        "points": 2345,
-        "transfersLeft": 34
-    },
-    {
-        "profileId": 4,
-        "rank": 4,
-        "userName": "testuser4",
-        "phaseId": 2,
-        "phaseNo": 2,
-        "points": 2345,
-        "transfersLeft": 34
-    },
-    {
-        "profileId": 5,
-        "rank": 5,
-        "userName": "testuser5",
-        "phaseId": 1,
-        "phaseNo": 1,
-        "points": 2345,
-        "transfersLeft": 34
-    },
-    {
-        "profileId": 5,
-        "rank": 5,
-        "userName": "testuser5",
-        "phaseId": 2,
-        "phaseNo": 2,
-        "points": 2345,
-        "transfersLeft": 34
-    },
-    {
-        "profileId": 6,
-        "rank": 6,
-        "userName": "testuser6",
-        "phaseId": 1,
-        "phaseNo": 1,
-        "points": 2345,
-        "transfersLeft": 34
-    },
-    {
-        "profileId": 6,
-        "rank": 6,
-        "userName": "testuser6",
-        "phaseId": 2,
-        "phaseNo": 2,
-        "points": 2345,
-        "transfersLeft": 34
-    },
-    {
-        "profileId": 7,
-        "rank": 7,
         "userName": "testuser7",
         "phaseId": 1,
         "phaseNo": 1,
@@ -117,29 +63,11 @@
         "transfersLeft": 34
     },
     {
-        "profileId": 7,
-        "rank": 7,
-        "userName": "testuser7",
-        "phaseId": 2,
-        "phaseNo": 2,
-        "points": 2345,
-        "transfersLeft": 34
-    },
-    {
         "profileId": 8,
-        "rank": 8,
+        "rank": 1,
         "userName": "testuser8",
         "phaseId": 1,
         "phaseNo": 1,
-        "points": 2345,
-        "transfersLeft": 34
-    },
-    {
-        "profileId": 8,
-        "rank": 8,
-        "userName": "testuser8",
-        "phaseId": 2,
-        "phaseNo": 2,
         "points": 2345,
         "transfersLeft": 34
     }

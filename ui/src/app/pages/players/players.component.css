@@ -1,7 +1,4 @@
-p {
-    font-family: Lato;
-  }
-  
+
   table {
     width: 100%;
   }
@@ -17,3 +14,13 @@ p {
 .basic-container {
     padding: 30px;
 }
+
+.mat-header-cell {
+  vertical-align: top;
+  
+}
+
+.mat-column-battingPoints, .mat-column-bowlingPoints, .mat-column-fieldingPoints, .mat-column-bonusPoints, .mat-column-totalPoints{
+  /*text-align: center;*/
+  padding: 5px;
+ }

@@ -1,5 +1,12 @@
 <div class="basic-container">
-  <table mat-table [dataSource]="overallUserPoints" class="mat-elevation-z8">
+  <mat-form-field>
+    <mat-select [formControl]="option">      
+      <mat-option value="overall">Overall</mat-option>
+      <mat-option *ngFor="let phase of tournamentPhases" [value]="phase.phaseNo">{{phase.phaseNo}}</mat-option>   
+    </mat-select>
+  </mat-form-field>
+  
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
     <!-- Position Column -->
     <ng-container matColumnDef="rank">
       <th mat-header-cell *matHeaderCellDef> Rank </th>
