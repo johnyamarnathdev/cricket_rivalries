@@ -28,6 +28,7 @@ const routes: Routes = [
       }
     ]
   },
+  {path: "home", redirectTo: "/home/league", pathMatch: "full"},
   {
     path: "home",
     component: HomeLayoutComponent,
