@@ -46,7 +46,10 @@ export class UserMatchComponent implements OnInit {
         this.tournamentMatches = data.tournamentMatches;
       }
     );
-
+    
+    // if(!(this.route.snapshot.params['profileId'] && this.route.snapshot.params['matchId'])) {
+    //   this.loadChild();
+    // }
     this.onChanges();
   }
 
@@ -64,7 +67,7 @@ export class UserMatchComponent implements OnInit {
 
   loadChild() {
     this.router.navigate(
-      ["../" + this.selectedUserProfileId, this.selectedMatchId],
+      [this.selectedUserProfileId, this.selectedMatchId],
       { relativeTo: this.route }
     );
   }

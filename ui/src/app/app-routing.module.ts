@@ -28,7 +28,7 @@ const routes: Routes = [
       }
     ]
   },
-  {path: "home", redirectTo: "/home/league", pathMatch: "full"},
+  { path: "home", redirectTo: "/home/league", pathMatch: "full" },
   {
     path: "home",
     component: HomeLayoutComponent,
@@ -47,18 +47,24 @@ const routes: Routes = [
         component: RulesComponent
       },
       {
-        path: "user-match/:tournamentId/:profileId",
+        path: "user-match/:tournamentId",
         component: UserMatchComponent,
-        data: {
-          dummy: 1
-        },
         resolve: {
           tournamentMatches: TournamentMatchesResolverService
           //overallUserPoints: OverallPointsResolverService
         },
         children: [
           {
-            path: ":matchId",
+            path: ":profileId/:matchId",
+            component: UserMatchViewComponent,
+            resolve: {
+              matchPlayers: UserMatchPlayersResolverService,
+              matchPoints: UserMatchPointsResolverService,
+              transfersLeft: UserTransfersResolverService
+            }
+          },
+          {
+            path: "",
             component: UserMatchViewComponent,
             resolve: {
               matchPlayers: UserMatchPlayersResolverService,

@@ -9,6 +9,7 @@ module.exports = function () {
         "players": require('./players-list.mock.json'),
         "usermatch": require('./user-match-players.mock.json'),
         "usermatchpoints": require('./user-match-points.mock.json'),
-        "usertransfers": require('./user-transfers.mock.json')
+        "usertransfers": require('./user-transfers.mock.json'),
+        "login": require('./login.mock.json')
     }
 }

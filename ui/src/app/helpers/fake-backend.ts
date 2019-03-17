@@ -10,8 +10,8 @@ import { Role } from '../model/role';
 export class FakeBackendInterceptor implements HttpInterceptor {
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         const users: User[] = [
-            { id: 1, username: 'admin', password: 'admin', firstName: 'Admin', lastName: 'User', role: Role.Admin },
-            { id: 2, username: 'user', password: 'user', firstName: 'Normal', lastName: 'User', role: Role.User }
+            { profileId: 1, username: 'admin', password: 'admin', firstName: 'Admin', lastName: 'User', role: Role.Admin, nickName: "klk_ele", "email": "mail@mail.com" },
+            { profileId: 2, username: 'user', password: 'user', firstName: 'Normal', lastName: 'User', role: Role.User , nickName: "klk_ele", "email": "mail@mail.com"}
         ];
 
         const authHeader = request.headers.get('Authorization');
@@ -27,12 +27,14 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                 const user = users.find(x => x.username === request.body.username && x.password === request.body.password);
                 if (!user) return error('Username or password is incorrect');
                 return ok({
-                    id: user.id,
+                    id: user.profileId,
                     username: user.username,
                     firstName: user.firstName,
                     lastName: user.lastName,
                     role: user.role,
-                    token: `fake-jwt-token.${user.role}`
+                    token: `fake-jwt-token.${user.role}`,
+                    nickName: user.nickName,
+                    email: user.nickName
                 });
             }
 
@@ -46,9 +48,9 @@ export class FakeBackendInterceptor implements HttpInterceptor {
 
                 // only allow normal users access to their own record
                 const currentUser = users.find(x => x.role === role);
-                if (id !== currentUser.id && role !== Role.Admin) return unauthorised();
+                if (id !== currentUser.profileId && role !== Role.Admin) return unauthorised();
 
-                const user = users.find(x => x.id === id);
+                const user = users.find(x => x.profileId === id);
                 return ok(user);
             }
 

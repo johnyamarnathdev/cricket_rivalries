@@ -1,7 +1,11 @@
-table {
-    width: 100%;
+mat-table {
+  width: 100%;
 }
 
 .basic-container {
-    padding: 30px;
+  padding: 30px;
+}
+
+mat-table mat-row.mat-row {
+  cursor: pointer;
 }

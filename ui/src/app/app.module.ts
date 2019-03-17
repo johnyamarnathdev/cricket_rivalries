@@ -19,8 +19,6 @@ import { RulesComponent } from './pages/rules/rules.component';
 import { UserMatchComponent } from './pages/user-match/user-match.component';
 import { PlayersComponent } from './pages/players/players.component';
 import { UserMatchViewComponent } from './pages/user-match-players-view/user-match-view.component';
-import { UserMatchOverviewComponent } from './pages/user-match-overview/user-match-overview.component';
-
 
 import { fakeBackendProvider } from './helpers/fake-backend';
 import { JwtInterceptor,} from './helpers/jwt.interceptor';
@@ -42,8 +40,7 @@ import { LogoutComponent } from './common-components/logout/logout.component';
     UserMatchComponent,
     PlayersComponent,
     LogoutComponent,
-    UserMatchViewComponent,
-    UserMatchOverviewComponent
+    UserMatchViewComponent
   ],
   imports: [
     BrowserModule,
