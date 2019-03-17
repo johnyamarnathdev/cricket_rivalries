@@ -10,6 +10,7 @@ module.exports = function () {
         "usermatch": require('./user-match-players.mock.json'),
         "usermatchpoints": require('./user-match-points.mock.json'),
         "usertransfers": require('./user-transfers.mock.json'),
-        "login": require('./login.mock.json')
+        "login": require('./login.mock.json'),
+        "allusers": require('./users.mock.json')
     }
 }

@@ -3,7 +3,7 @@
 		"matchId": 1,
 		"tournamentId": 1,
 		"phaseId": 1,
-		"matchDate": "01/03/2019",
+		"matchDate": "1552820996274",
 		"team1": {
 			"teamId": 1,
 			"name": "Chennai super kings",
@@ -22,7 +22,7 @@
 		"matchId": 2,
 		"tournamentId": 1,
 		"phaseId": 1,
-		"matchDate": "02/03/2019",
+		"matchDate": "1552708800000",
 		"team1": {
 			"teamId": 3,
 			"name": "Royal Challengers",
@@ -41,7 +41,7 @@
 		"matchId": 3,
 		"tournamentId": 1,
 		"phaseId": 1,
-		"matchDate": "03/03/2019",
+		"matchDate": "1552708800000",
 		"team1": {
 			"teamId": 5,
 			"name": "Punjab",
@@ -60,7 +60,7 @@
 		"matchId": 4,
 		"tournamentId": 1,
 		"phaseId": 1,
-		"matchDate": "04/03/2019",
+		"matchDate": "1552708800000",
 		"team1": {
 			"teamId": 7,
 			"name": "Kolkatta Knight Raiders",

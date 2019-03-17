@@ -4,7 +4,7 @@ export class TournamentMatch {
     matchId: number;
     tournamentId: number;
     phaseId: number;
-    matchDate: string;
+    matchDate: number;
     team1: Team;
     team2: Team;
     teamSelectionCutoffTime: number;

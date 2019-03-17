@@ -27,7 +27,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                 const user = users.find(x => x.username === request.body.username && x.password === request.body.password);
                 if (!user) return error('Username or password is incorrect');
                 return ok({
-                    id: user.profileId,
+                    profileId: user.profileId,
                     username: user.username,
                     firstName: user.firstName,
                     lastName: user.lastName,

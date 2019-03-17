@@ -2,10 +2,10 @@ import { Component, OnInit } from "@angular/core";
 import { FormControl } from "@angular/forms";
 import {
   Router,
-  ActivatedRoute,
-  ActivatedRouteSnapshot
+  ActivatedRoute
 } from "@angular/router";
 import { TournamentMatch } from "src/app/model/tournament-match";
+import { User } from "src/app/model/user";
 
 @Component({
   selector: "app-user-match",
@@ -15,41 +15,44 @@ import { TournamentMatch } from "src/app/model/tournament-match";
 export class UserMatchComponent implements OnInit {
   constructor(private router: Router, private route: ActivatedRoute) {}
 
-  userFormControl = new FormControl();
-
   matchFormControl = new FormControl();
 
-  selectedUserProfileId: number = 1;
+  userFormControl = new FormControl();
 
-  selectedMatchId: number = 3;
+  selectedUserProfileId: number;
 
-  users: any[] = [
-    {
-      userName: "kalakaleleven",
-      profileId: 1
-    },
-    {
-      userName: "player2",
-      profileId: 2
-    }
-  ];
+  selectedMatchId: number;
 
   tournamentMatches: TournamentMatch[];
 
+  users: User[];
+
   selected: any;
   ngOnInit() {
-    console.log(this.route.snapshot.params.profileId);
-    this.userFormControl.setValue(this.selectedUserProfileId);
-    this.matchFormControl.setValue(this.selectedMatchId);
     this.route.data.subscribe(
       (data: { tournamentMatches: TournamentMatch[] }) => {
         this.tournamentMatches = data.tournamentMatches;
       }
     );
-    
-    // if(!(this.route.snapshot.params['profileId'] && this.route.snapshot.params['matchId'])) {
-    //   this.loadChild();
-    // }
+
+    this.route.data.subscribe((data: { users: User[] }) => {
+      this.users = data.users;
+    });
+
+    var recentMatch = this.tournamentMatches
+      .sort((a, b) =>
+        a.matchDate < b.matchDate ? 1 : b.matchDate < a.matchDate ? -1 : 0
+      )
+      .find(match => {
+        return match.matchDate < new Date().getTime();
+      });
+
+    this.selectedUserProfileId = this.route.snapshot.params["profileId"];
+    this.selectedMatchId = recentMatch.matchId;
+
+    this.matchFormControl.setValue(this.selectedMatchId);
+    this.userFormControl.setValue(this.selectedUserProfileId);
+
     this.onChanges();
   }
 
@@ -67,8 +70,10 @@ export class UserMatchComponent implements OnInit {
 
   loadChild() {
     this.router.navigate(
-      [this.selectedUserProfileId, this.selectedMatchId],
-      { relativeTo: this.route }
+      ["../" + this.selectedUserProfileId, this.selectedMatchId],
+      {
+        relativeTo: this.route
+      }
     );
   }
 }

@@ -65,8 +65,7 @@ export class LeagueComponent implements OnInit {
   }
 
   navigate(data: OverallUserPoint) {
-    console.log(data);
-    this.router.navigate(["../user-match/1/" + data.profileId + "/3"], {
+    this.router.navigate(["../user-match/1/" + data.profileId], {
       relativeTo: this.route
     });
   }

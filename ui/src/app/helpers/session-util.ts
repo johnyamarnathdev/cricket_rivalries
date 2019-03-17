@@ -1,6 +1,10 @@
 import { User } from "../model/user";
 import { Tournament } from "../model/tournament";
+import { Injectable } from "@angular/core";
 
+@Injectable({
+  providedIn: "root"
+})
 export class SessionUtil {
   constructor() {}
 

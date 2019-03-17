@@ -6,15 +6,15 @@
     fxLayout.xs="column"
   >
     <mat-form-field>
-      <mat-select [formControl]="userFormControl">
+      <mat-select [(formControl)]="userFormControl">
         <mat-option *ngFor="let user of users" [value]="user.profileId">{{
-          user.userName
+          user.username
         }}</mat-option>
       </mat-select>
     </mat-form-field>
 
     <mat-form-field>
-      <mat-select [formControl]="matchFormControl">
+      <mat-select [(formControl)]="matchFormControl">
         <mat-option
           *ngFor="let match of tournamentMatches"
           [value]="match.matchId"

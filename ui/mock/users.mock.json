@@ -1,0 +1,20 @@
+[
+  {
+    "profileId": "1",
+    "username": "kalakaleleven",
+    "firstName": "Johny Amarnath",
+    "lastName": "Thangadurai",
+    "role": "user",
+    "nickName": "kld_ele",
+    "email": "mail@mail.com"
+  },
+  {
+    "profileId": "2",
+    "username": "testuser2",
+    "firstName": "testuser2",
+    "lastName": "testuser2",
+    "role": "user",
+    "nickName": "kld_ele",
+    "email": "mail@mail.com"
+  }
+]

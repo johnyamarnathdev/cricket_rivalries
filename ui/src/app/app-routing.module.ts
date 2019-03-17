@@ -16,6 +16,7 @@ import { TournamentPhasesResolverService } from "./resolvers/tournament-phases-r
 import { TournamentMatchesResolverService } from "./resolvers/tournament-matches-resolver.service";
 import { UserMatchPointsResolverService } from "./resolvers/user-match-points-resolver.service";
 import { UserTransfersResolverService } from "./resolvers/user-transfers-resolver.service";
+import { UsersResolverService } from './resolvers/users-resolver.service';
 
 const routes: Routes = [
   {
@@ -47,15 +48,15 @@ const routes: Routes = [
         component: RulesComponent
       },
       {
-        path: "user-match/:tournamentId",
+        path: "user-match/:tournamentId/:profileId",
         component: UserMatchComponent,
         resolve: {
-          tournamentMatches: TournamentMatchesResolverService
-          //overallUserPoints: OverallPointsResolverService
+          tournamentMatches: TournamentMatchesResolverService,
+          users: UsersResolverService
         },
         children: [
           {
-            path: ":profileId/:matchId",
+            path: ":matchId",
             component: UserMatchViewComponent,
             resolve: {
               matchPlayers: UserMatchPlayersResolverService,

@@ -1,5 +1,7 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/model/user';
+import { SessionUtil } from 'src/app/helpers/session-util';
 
 @Component({
   selector: 'app-nav-bar',
@@ -9,7 +11,11 @@ import { Component, OnInit } from '@angular/core';
 export class NavBarComponent implements OnInit {
   navLinks: any[];
   activeLinkIndex = -1;
-  constructor(private router: Router) {
+  currentUserProfileId: number;
+
+  constructor(private router: Router, private sessionUtil: SessionUtil) {
+    this.currentUserProfileId = this.sessionUtil.getUser().profileId;
+    
     this.navLinks = [
       {
         label: 'League',
@@ -18,7 +24,7 @@ export class NavBarComponent implements OnInit {
       }, 
       {
         label: 'User Match',
-        link: './user-match/1',
+        link: './user-match/1/'+this.currentUserProfileId,
         index: 1
       },
       {
