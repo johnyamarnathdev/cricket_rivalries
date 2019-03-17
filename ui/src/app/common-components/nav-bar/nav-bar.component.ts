@@ -18,7 +18,7 @@ export class NavBarComponent implements OnInit {
       }, 
       {
         label: 'User Match',
-        link: './user-match',
+        link: './user-match/1/1',
         index: 1
       },
       {

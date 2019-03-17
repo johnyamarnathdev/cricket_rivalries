@@ -1,0 +1,90 @@
+[
+    {
+        "playerName": "Player1",
+        "playerNickName": "Player1",
+        "skill": "BA",
+        "points": 234,
+        "team": "RCB",
+        "owner": "kalakalEleven"
+    },
+    {
+        "playerName": "Player2",
+        "playerNickName": "Player2",
+        "skill": "BA",
+        "points": 234,
+        "team": "RCB",
+        "owner": "kalakalEleven"
+    },
+    {
+        "playerName": "Player3",
+        "playerNickName": "Player3",
+        "skill": "BA",
+        "points": 234,
+        "team": "RCB",
+        "owner": "kalakalEleven"
+    },
+    {
+        "playerName": "Player5",
+        "playerNickName": "Player5",
+        "skill": "BA",
+        "points": 234,
+        "team": "RCB",
+        "owner": "kalakalEleven"
+    },
+    {
+        "playerName": "Player6",
+        "playerNickName": "Player6",
+        "skill": "BA",
+        "points": 234,
+        "team": "RCB",
+        "owner": "kalakalEleven"
+    },
+    {
+        "playerName": "Player7",
+        "playerNickName": "Player7",
+        "skill": "BA",
+        "points": 234,
+        "team": "RCB",
+        "owner": "kalakalEleven"
+    },
+    {
+        "playerName": "Player8",
+        "playerNickName": "Player8",
+        "skill": "BA",
+        "points": 234,
+        "team": "RCB",
+        "owner": "kalakalEleven"
+    },
+    {
+        "playerName": "Player9",
+        "playerNickName": "Player9",
+        "skill": "WC",
+        "points": 123,
+        "team": "MUM",
+        "owner": "kalakalEleven"
+    },
+    {
+        "playerName": "Player10",
+        "playerNickName": "Player10",
+        "skill": "BO",
+        "points": 23,
+        "team": "RCB",
+        "owner": "kalakalEleven"
+    },
+    {
+        "playerName": "Player11",
+        "playerNickName": "Player11",
+        "skill": "BO",
+        "points": 56,
+        "team": "DDR",
+        "owner": "kalakalEleven"
+    },
+    {
+        "playerName": "Player1",
+        "playerNickName": "Player1",
+        "skill": "BO",
+        "points": 321,
+        "team": "csk",
+        "owner": "kalakalEleven"
+    }
+]

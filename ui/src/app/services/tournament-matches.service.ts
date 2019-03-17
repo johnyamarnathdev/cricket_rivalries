@@ -20,10 +20,11 @@ export class TournamentMatchesService {
 
   constructor(private http: HttpClient, private errorHandler: ErrorHandler) { }
 
-  getTournamentMatches(): Observable<TournamentMatch> {
-    return this.http.get<TournamentMatch>(this.url, httpOptions)
+  getTournamentMatches(tournamentId: number): Observable<TournamentMatch[]> {
+    const url = `${this.url}/${tournamentId}`;
+    return this.http.get<TournamentMatch[]>(url, httpOptions)
       .pipe(
-        catchError(this.errorHandler.handleError<TournamentMatch>('getTournamentMatches'))
+        catchError(this.errorHandler.handleError<TournamentMatch[]>('getTournamentMatches'))
       );
   }
 }

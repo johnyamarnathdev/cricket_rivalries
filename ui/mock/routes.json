@@ -1,4 +1,8 @@
 {
     "/api/*": "/$1",
-    "/phasepoints/*": "/phasepoints"
+    "/phasepoints/*": "/phasepoints",
+    "/usermatch/*": "/usermatch",
+    "/usermatchpoints/*": "/userMatchPoints",
+    "/usertransfers/*": "/userTransfers",
+    "/tournamentmatches/*": "/tournamentMatches"
 }

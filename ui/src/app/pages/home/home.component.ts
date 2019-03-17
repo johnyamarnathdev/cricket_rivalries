@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
   }
 
   getTournamentMatches() {
-    this.tournamentMatchesService.getTournamentMatches()
+    this.tournamentMatchesService.getTournamentMatches(1)
       .subscribe();
   }
 }

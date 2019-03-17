@@ -6,7 +6,7 @@ import { catchError } from 'rxjs/operators';
 
 import { environment } from 'src/environments/environment';
 import { ErrorHandler } from './error-handler'
-import { PhaseUserPoint } from '../model/phase-user-point';
+import { UserMatchPlayer } from '../model/user-match-player';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -15,17 +15,17 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
-export class PhaseUserPointsService {
+export class UserMatchPlayersService {
 
-  private url = environment.apiUrl + 'phasepoints';
+  private url = environment.apiUrl + 'usermatch';
 
   constructor(private http: HttpClient, private errorHandler: ErrorHandler) { }
 
-  getPhaseUserPoints(phaseNo: number): Observable<PhaseUserPoint[]> {
-    const url = `${this.url}/${phaseNo}`;
-    return this.http.get<PhaseUserPoint[]>(url, httpOptions)
+  getUserMatchPlayers(profileId: number): Observable<UserMatchPlayer[]> {
+    const url = `${this.url}/${profileId}`;
+    return this.http.get<UserMatchPlayer[]>(url, httpOptions)
       .pipe(
-        catchError(this.errorHandler.handleError<PhaseUserPoint[]>('getPhaseUserPoints'))
+        catchError(this.errorHandler.handleError<UserMatchPlayer[]>('getUserMatchPlayers'))
       );
   }
 }

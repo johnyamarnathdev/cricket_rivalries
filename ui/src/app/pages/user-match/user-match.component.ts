@@ -1,48 +1,71 @@
-import { Component, OnInit } from '@angular/core';
-
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-}
-
-export interface Food {
-  value: string;
-  viewValue: string;
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
-];
+import { Component, OnInit } from "@angular/core";
+import { FormControl } from "@angular/forms";
+import {
+  Router,
+  ActivatedRoute,
+  ActivatedRouteSnapshot
+} from "@angular/router";
+import { TournamentMatch } from "src/app/model/tournament-match";
 
 @Component({
-  selector: 'app-user-match',
-  templateUrl: './user-match.component.html',
-  styleUrls: ['./user-match.component.css']
+  selector: "app-user-match",
+  templateUrl: "./user-match.component.html",
+  styleUrls: ["./user-match.component.css"]
 })
 export class UserMatchComponent implements OnInit {
+  constructor(private router: Router, private route: ActivatedRoute) {}
 
-  constructor() { }
+  userFormControl = new FormControl();
 
+  matchFormControl = new FormControl();
+
+  selectedUserProfileId: number = 1;
+
+  selectedMatchId: number = 3;
+
+  users: any[] = [
+    {
+      userName: "kalakaleleven",
+      profileId: 1
+    },
+    {
+      userName: "player2",
+      profileId: 2
+    }
+  ];
+
+  tournamentMatches: TournamentMatch[];
+
+  selected: any;
   ngOnInit() {
+    console.log(this.route.snapshot.params.profileId);
+    this.userFormControl.setValue(this.selectedUserProfileId);
+    this.matchFormControl.setValue(this.selectedMatchId);
+    this.route.data.subscribe(
+      (data: { tournamentMatches: TournamentMatch[] }) => {
+        this.tournamentMatches = data.tournamentMatches;
+      }
+    );
+
+    this.onChanges();
   }
 
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = ELEMENT_DATA;
+  onChanges() {
+    this.userFormControl.valueChanges.subscribe(selectedUserProfileId => {
+      this.selectedUserProfileId = selectedUserProfileId;
+      this.loadChild();
+    });
 
-  foods: Food[] = [
-    {value: 'steak-0', viewValue: 'Steak'},
-    {value: 'pizza-1', viewValue: 'Pizza'},
-    {value: 'tacos-2', viewValue: 'Tacos'}
-  ];
+    this.matchFormControl.valueChanges.subscribe(selectedMatchId => {
+      this.selectedMatchId = selectedMatchId;
+      this.loadChild();
+    });
+  }
+
+  loadChild() {
+    this.router.navigate(
+      ["../" + this.selectedUserProfileId, this.selectedMatchId],
+      { relativeTo: this.route }
+    );
+  }
 }
