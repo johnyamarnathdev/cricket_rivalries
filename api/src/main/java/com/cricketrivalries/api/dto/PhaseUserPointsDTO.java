@@ -1,23 +1,17 @@
-package com.cricketrivalries.api.model;
+package com.cricketrivalries.api.dto;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+public class PhaseUserPointsDTO {
 
-@Entity(name = "overall_points_vw")
-public class OverallPoints {
-
-	@Id
-	@Column(name = "profile_id")
 	private Long profileId;
 
-	@Column(name = "points")
 	private int points;
 
-	@Column(name = "overall_rank")
 	private int rank;
 
-	@Column(name = "username")
+	private String phaseId;
+
+	private String phaseNo;
+
 	private String userName;
 
 	public Long getProfileId() {
@@ -44,6 +38,22 @@ public class OverallPoints {
 		this.rank = rank;
 	}
 
+	public String getPhaseId() {
+		return phaseId;
+	}
+
+	public void setPhaseId(String phaseId) {
+		this.phaseId = phaseId;
+	}
+
+	public String getPhaseNo() {
+		return phaseNo;
+	}
+
+	public void setPhaseNo(String phaseNo) {
+		this.phaseNo = phaseNo;
+	}
+
 	public String getUserName() {
 		return userName;
 	}
@@ -51,4 +61,5 @@ public class OverallPoints {
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
+
 }
