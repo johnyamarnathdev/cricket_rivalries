@@ -9,5 +9,4 @@ public class CricketRivalriesApiApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(CricketRivalriesApiApplication.class, args);
 	}
-
 }

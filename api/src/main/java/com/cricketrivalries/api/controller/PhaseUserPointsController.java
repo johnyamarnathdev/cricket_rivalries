@@ -2,16 +2,14 @@ package com.cricketrivalries.api.controller;
 
 import java.util.List;
 
-import javax.websocket.server.PathParam;
+import com.cricketrivalries.api.model.PhaseUserPoints;
+import com.cricketrivalries.api.repository.PhaseUserPointsRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.cricketrivalries.api.model.PhaseUserPoints;
-import com.cricketrivalries.api.repository.PhaseUserPointsRepository;
 
 @RestController
 @RequestMapping(path = "/api")

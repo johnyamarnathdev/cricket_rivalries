@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.cricketrivalries.api.dto.UserDTO;
 import com.cricketrivalries.api.model.User;
 import com.cricketrivalries.api.repository.UserRepository;
@@ -26,6 +29,14 @@ public class UserController {
 	public UserDTO getUser(@PathVariable("id") long id) {
 		User user = userRepo.findById(id).orElse(null);
 		return convertToDto(user);
+	}
+
+	@GetMapping(value = "/allusers")
+	public List<UserDTO> getAllUsers() {
+		Iterable<User> users = userRepo.findAll();
+		List<UserDTO> userDTOs = new ArrayList<>();
+		users.forEach(user -> userDTOs.add(convertToDto(user)));
+		return userDTOs;
 	}
 
 	private UserDTO convertToDto(User user) {

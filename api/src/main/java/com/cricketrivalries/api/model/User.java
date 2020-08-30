@@ -6,15 +6,15 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity
+@Entity(name = "user_profile")
 public class User {
 	public User() {
 	}
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id")
-	private Long id;
+	//@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "profile_id")
+	private Long profileId;
 
 	@Column(name = "first_name")
 	private String firstName;
@@ -22,16 +22,8 @@ public class User {
 	@Column(name = "last_name")
 	private String lastName;
 
-	@Column(name = "user_name")
+	@Column(name = "username")
 	private String userName;
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
 
 	public String getFirstName() {
 		return firstName;
@@ -55,5 +47,13 @@ public class User {
 
 	public void setUserName(String userName) {
 		this.userName = userName;
+	}
+
+	public Long getProfileId() {
+		return profileId;
+	}
+
+	public void setProfileId(Long profileId) {
+		this.profileId = profileId;
 	}
 }

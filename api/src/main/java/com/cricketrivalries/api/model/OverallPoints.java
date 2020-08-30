@@ -4,7 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-@Entity(name = "overall_points_vw")
+@Entity(name = "overall_user_points_vw")
 public class OverallPoints {
 
 	@Id
