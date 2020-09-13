@@ -2,7 +2,7 @@ package com.cricketrivalries.api.dto;
 
 public class UserDTO {
 
-	private Long id;
+	private Long profileId;
 
 	private String firstName;
 
@@ -10,12 +10,12 @@ public class UserDTO {
 
 	private String userName;
 
-	public Long getId() {
-		return id;
+	public Long getProfileId() {
+		return profileId;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setProfileId(Long id) {
+		this.profileId = id;
 	}
 
 	public String getFirstName() {

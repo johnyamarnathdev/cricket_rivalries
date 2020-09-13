@@ -12,6 +12,7 @@ export class TournamentMatchesResolverService implements Resolve<TournamentMatch
   constructor(private service: TournamentMatchesService) { }
 
   resolve(route: ActivatedRouteSnapshot) {
+    console.log("Matches");
     return this.service.getTournamentMatches(route.params['tournamentId']);
   }
 }

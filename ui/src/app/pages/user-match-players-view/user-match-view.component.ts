@@ -36,9 +36,9 @@ export class UserMatchViewComponent implements OnInit {
     this.route.data.subscribe((data: { matchPoints: UserMatchPoint[] }) => {
       this.matchPoints = data.matchPoints;
     });
-    this.route.data.subscribe((data: { transfersLeft: UserTransfer }) => {
-      this.transfersLeft = data.transfersLeft;
-    });
+    // this.route.data.subscribe((data: { transfersLeft: UserTransfer }) => {
+    //   this.transfersLeft = data.transfersLeft;
+    // });
   }
 
   // ngOnChanges(changes: SimpleChanges) {

@@ -40,19 +40,23 @@ export class UserMatchComponent implements OnInit {
     });
 
     var recentMatch = this.tournamentMatches
-      .sort((a, b) =>
-        a.matchDate < b.matchDate ? 1 : b.matchDate < a.matchDate ? -1 : 0
+      .sort((a, b) =>{
+         let datea = new Date(a.matchDateTime).getTime();
+         let dateb = new Date(b.matchDateTime).getTime();
+
+        return datea < dateb ? 1 : dateb < datea ? -1 : 0
+      }
       )
       .find(match => {
-        return match.matchDate < new Date().getTime();
+        return new Date(match.matchDateTime).getTime() < new Date().getTime();
       });
 
     this.selectedUserProfileId = this.route.snapshot.params["profileId"];
+    console.log("Select user profile id: " + this.selectedUserProfileId);
     this.selectedMatchId = recentMatch.matchId;
-
     this.matchFormControl.setValue(this.selectedMatchId);
-    this.userFormControl.setValue(this.selectedUserProfileId);
-
+    this.userFormControl.setValue(parseInt(this.route.snapshot.params["profileId"]));
+     //this.loadChild();
     this.onChanges();
   }
 

@@ -8,7 +8,7 @@
     <mat-form-field>
       <mat-select [(formControl)]="userFormControl">
         <mat-option *ngFor="let user of users" [value]="user.profileId">{{
-          user.username
+          user.userName
         }}</mat-option>
       </mat-select>
     </mat-form-field>
@@ -24,6 +24,6 @@
     </mat-form-field>
   </div>
 
-  <router-outlet class="mat-app-background"></router-outlet>
-  <!-- <app-user-match-view [user]="option.value"></app-user-match-view> -->
+  <router-outlet *ngIf="selectedMatchId" class="mat-app-background"></router-outlet>
+  <!--- <app-user-match-view [user]="option.value"></app-user-match-view> -->
 </div>

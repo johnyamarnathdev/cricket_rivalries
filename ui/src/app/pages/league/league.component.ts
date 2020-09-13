@@ -26,6 +26,8 @@ export class LeagueComponent implements OnInit {
 
   dataSource = new MatTableDataSource();
 
+  tournamentId: number;
+
   displayedColumns: string[] = ["rank", "userName", "points", "transfersLeft"];
 
   @ViewChild(MatSort) sort: MatSort;
@@ -48,6 +50,12 @@ export class LeagueComponent implements OnInit {
     this.route.data.subscribe(
       (data: { tournamentPhases: TournamentPhase[] }) => {
         this.tournamentPhases = data.tournamentPhases;
+        console.log("Tournament Id: ", this.tournamentPhases[0]);
+        if (this.tournamentPhases[0]) {
+          this.tournamentId = this.tournamentPhases[0].tournamentId;
+        } 
+        
+        
       }
     );
   }
@@ -57,7 +65,7 @@ export class LeagueComponent implements OnInit {
       if ("overall" === data) {
         this.dataSource.data = this.overallUserPoints;
       } else {
-        this.phasePointsService.getPhaseUserPoints(data).subscribe(data => {
+        this.phasePointsService.getPhaseUserPoints(this.tournamentId, data).subscribe(data => {
           this.dataSource.data = data;
         });
       }

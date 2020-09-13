@@ -24,6 +24,7 @@ import { fakeBackendProvider } from './helpers/fake-backend';
 import { JwtInterceptor,} from './helpers/jwt.interceptor';
 import { ErrorInterceptor } from './helpers/error.interceptors';
 import { LogoutComponent } from './common-components/logout/logout.component';
+import { TeamSelectionComponent } from './pages/team-selection/team-selection.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { LogoutComponent } from './common-components/logout/logout.component';
     UserMatchComponent,
     PlayersComponent,
     LogoutComponent,
-    UserMatchViewComponent
+    UserMatchViewComponent,
+    TeamSelectionComponent
   ],
   imports: [
     BrowserModule,

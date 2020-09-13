@@ -1,0 +1,159 @@
+<div class=" basic-container ">
+  <table mat-table
+    [dataSource]="dataSource"
+    matSort
+    matSortActive="name"
+    matSortDirection="desc"
+    matSortDisableClear
+    class="mat-elevation-z8"
+  >
+    <ng-container matColumnDef="name">
+      <th mat-header-cell
+        *matHeaderCellDef        
+        fxFlex="15%"
+        fxLayoutAlign="start center"
+      >
+      
+        <mat-form-field>
+          <mat-label>Player</mat-label>
+          <input matInput [formControl]="nameFilter" />
+        </mat-form-field>
+      
+      </th>
+      <tr mat-cell
+        *matCellDef="let player"
+        fxFlex="15%"
+        fxLayoutAlign="start center"
+        >{{ player.name }}</tr
+      >
+    </ng-container>
+
+    <ng-container matColumnDef="team">
+      <th mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        fxFlex="15%"
+        fxLayoutAlign="start center"
+      >
+        <mat-form-field class="filter" floatLabel="never">
+          <mat-label>Team</mat-label>
+          <input matInput [formControl]="teamFilter" />
+        </mat-form-field>
+      </th>
+      <tr mat-cell
+        *matCellDef="let player"
+        fxFlex="15%"
+        fxLayoutAlign="start center"
+        >{{ player.team }}</tr
+      >
+    </ng-container>
+
+    <ng-container matColumnDef="skill">
+      <th mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        fxFlex="15%"
+        fxLayoutAlign="start center"
+      >
+        <mat-form-field class="filter" floatLabel="never">
+          <mat-label>Skill</mat-label>
+          <input matInput [formControl]="skillFilter" />
+        </mat-form-field>
+      </th>
+      <tr mat-cell
+        *matCellDef="let player"
+        fxFlex="15%"
+        fxLayoutAlign="start center"
+        >{{ player.skill }}</tr
+      >
+    </ng-container>
+
+    <ng-container matColumnDef="battingPoints">
+      <th mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        fxFlex="10%"
+        fxLayoutAlign="start center"
+      >
+        <mat-label>Batting Points</mat-label>
+      </th>
+      <tr mat-cell
+        *matCellDef="let player"
+        fxFlex="10%"
+        fxLayoutAlign="start center"
+        >{{ player.battingPoints }}</tr
+      >
+    </ng-container>
+
+    <ng-container matColumnDef="bowlingPoints">
+      <th mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        fxFlex="10%"
+        fxLayoutAlign="start center"
+      >
+        <mat-label>Bowling Points</mat-label>
+      </th>
+      <tr mat-cell
+        *matCellDef="let player"
+        fxFlex="10%"
+        fxLayoutAlign="start center"
+        >{{ player.bowlingPoints }}</tr
+      >
+    </ng-container>
+
+    <ng-container matColumnDef="fieldingPoints">
+      <th mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        fxFlex="10%"
+        fxLayoutAlign="start center"
+      >
+        <mat-label>Feilding Points</mat-label>
+      </th>
+      <tr mat-cell
+        *matCellDef="let player"
+        fxFlex="10%"
+        fxLayoutAlign="start center"
+        >{{ player.fieldingPoints }}</tr
+      >
+    </ng-container>
+
+    <ng-container matColumnDef="bonusPoints">
+      <th mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        fxFlex="10%"
+        fxLayoutAlign="start center"
+      >
+        <mat-label>Bonus Points</mat-label>
+      </th>
+      <tr mat-cell
+        *matCellDef="let player"
+        fxFlex="10%"
+        fxLayoutAlign="start center"
+        >{{ player.bonusPoints }}</tr
+      >
+    </ng-container>
+
+    <ng-container matColumnDef="totalPoints">
+      <th mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        fxFlex="15%"
+        fxLayoutAlign="start center"
+      >
+        <mat-label>Total Points</mat-label>
+      </th>
+      <tr mat-cell
+        *matCellDef="let player"
+        fxFlex="15%"
+        fxLayoutAlign="start center"
+        >{{ player.totalPoints }}</tr
+      >
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+    <tr mat-row *matRowDef="let players; columns: columnsToDisplay"></tr>
+  </table>
+</div>

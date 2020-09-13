@@ -3,29 +3,28 @@ package com.cricketrivalries.api.model;
 import java.sql.Date;
 
 import javax.persistence.Column;
-import javax.persistence.Entity;
 import javax.persistence.Id;
 
-@Entity(name = "tournament_phases")
-public class TournamentPhase {
+public class Phase {
+    
     @Id
-    @Column(name = "phase_id")
+    @Column(name = "PHASE_ID")
     private Long phaseId;
 
-    @Column(name = "phase_no")
+    @Column(name = "PHASE_NO")
     private Long phaseNo;
 
-    @Column(name = "tournament_id")
-    private Integer tournamentId;
+    @Column(name = "TOURNAMENT_ID")
+    private Long tournamentId;
 
-    @Column(name = "start_date")
+    @Column(name = "START_DATE")
     private Date startDate;
 
-    @Column(name = "end_date")
+    @Column(name = "END_DATE")
     private Date endDate;
 
     @Column(name = "NO_OF_TRANSFERS_ALLOWED")
-    private Integer noOfTransfersAllowed;
+    private Integer transfersAllowed;
 
     public Long getPhaseId() {
         return phaseId;
@@ -43,11 +42,11 @@ public class TournamentPhase {
         this.phaseNo = phaseNo;
     }
 
-    public Integer getTournamentId() {
+    public Long getTournamentId() {
         return tournamentId;
     }
 
-    public void setTournamentId(Integer tournamentId) {
+    public void setTournamentId(Long tournamentId) {
         this.tournamentId = tournamentId;
     }
 
@@ -67,11 +66,11 @@ public class TournamentPhase {
         this.endDate = endDate;
     }
 
-    public Integer getNoOfTransfersAllowed() {
-        return noOfTransfersAllowed;
+    public Integer getTransfersAllowed() {
+        return transfersAllowed;
     }
 
-    public void setNoOfTransfersAllowed(Integer noOfTransfersAllowed) {
-        this.noOfTransfersAllowed = noOfTransfersAllowed;
+    public void setTransfersAllowed(Integer transfersAllowed) {
+        this.transfersAllowed = transfersAllowed;
     }
 }

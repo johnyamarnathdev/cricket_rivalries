@@ -10,8 +10,8 @@ import { Role } from '../model/role';
 export class FakeBackendInterceptor implements HttpInterceptor {
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         const users: User[] = [
-            { profileId: 1, username: 'admin', password: 'admin', firstName: 'Admin', lastName: 'User', role: Role.Admin, nickName: "klk_ele", "email": "mail@mail.com" },
-            { profileId: 2, username: 'user', password: 'user', firstName: 'Normal', lastName: 'User', role: Role.User , nickName: "klk_ele", "email": "mail@mail.com"}
+            { profileId: 1, userName: 'admin', password: 'admin', firstName: 'Admin', lastName: 'User', role: Role.Admin, nickName: "klk_ele", "email": "mail@mail.com" },
+            { profileId: 2, userName: 'user', password: 'user', firstName: 'Normal', lastName: 'User', role: Role.User , nickName: "klk_ele", "email": "mail@mail.com"}
         ];
 
         const authHeader = request.headers.get('Authorization');
@@ -24,11 +24,11 @@ export class FakeBackendInterceptor implements HttpInterceptor {
 
             // authenticate - public
             if (request.url.endsWith('/users/authenticate') && request.method === 'POST') {
-                const user = users.find(x => x.username === request.body.username && x.password === request.body.password);
+                const user = users.find(x => x.userName === request.body.username && x.password === request.body.password);
                 if (!user) return error('Username or password is incorrect');
                 return ok({
                     profileId: user.profileId,
-                    username: user.username,
+                    username: user.userName,
                     firstName: user.firstName,
                     lastName: user.lastName,
                     role: user.role,

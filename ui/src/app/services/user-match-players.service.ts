@@ -17,15 +17,15 @@ const httpOptions = {
 })
 export class UserMatchPlayersService {
 
-  private url = environment.apiUrl + 'usermatch';
+  private url = environment.apiUrl + 'usermatchplayerpoints';
 
   constructor(private http: HttpClient, private errorHandler: ErrorHandler) { }
 
-  getUserMatchPlayers(profileId: number): Observable<UserMatchPlayer[]> {
-    const url = `${this.url}/${profileId}`;
+  getUserMatchPlayerPoints(profileId: number, matchId: number): Observable<UserMatchPlayer[]> {
+    const url = `${this.url}/${profileId}/${matchId}`;
     return this.http.get<UserMatchPlayer[]>(url, httpOptions)
       .pipe(
-        catchError(this.errorHandler.handleError<UserMatchPlayer[]>('getUserMatchPlayers'))
+        catchError(this.errorHandler.handleError<UserMatchPlayer[]>('getUserMatchPlayerPoints'))
       );
   }
 }

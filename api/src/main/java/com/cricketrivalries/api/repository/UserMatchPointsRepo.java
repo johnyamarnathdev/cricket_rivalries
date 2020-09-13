@@ -1,15 +1,9 @@
 package com.cricketrivalries.api.repository;
 
-import java.util.List;
-
-import com.cricketrivalries.api.model.UserMatchPoint;
+import com.cricketrivalries.api.model.UserMatchPoints;
 
 import org.springframework.data.repository.CrudRepository;
 
-/**
- * UserMatchPointsRepo
- */
-public interface UserMatchPointsRepo extends CrudRepository<UserMatchPoint, Long> {
-
-    public List<UserMatchPoint> findByProfileIdAndMatchId(Long profileId, Long matchId);
+public interface UserMatchPointsRepo extends CrudRepository<UserMatchPoints, Long> {
+    public UserMatchPoints findByProfileIdAndMatchId(Long profileId, Long matchId);
 }

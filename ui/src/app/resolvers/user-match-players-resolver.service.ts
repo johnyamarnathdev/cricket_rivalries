@@ -12,6 +12,13 @@ export class UserMatchPlayersResolverService implements Resolve<UserMatchPlayer[
 
   resolve(route: ActivatedRouteSnapshot) {
     console.log(route.params['profileId']);
-    return this.service.getUserMatchPlayers(route.parent.params['profileId']);
+    console.log(route.params['matchId']);
+
+    if (route.params['matchId']) {
+      return this.service.getUserMatchPlayerPoints(route.parent.params['profileId'], route.params['matchId']);
+    } else {
+      return null;
+    }
+    
   }
 }

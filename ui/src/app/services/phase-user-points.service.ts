@@ -21,8 +21,8 @@ export class PhaseUserPointsService {
 
   constructor(private http: HttpClient, private errorHandler: ErrorHandler) { }
 
-  getPhaseUserPoints(phaseNo: number): Observable<PhaseUserPoint[]> {
-    const url = `${this.url}/${phaseNo}`;
+  getPhaseUserPoints(tournamentId: number, phaseNo: number): Observable<PhaseUserPoint[]> {
+    const url = `${this.url}/${tournamentId}/${phaseNo}`;
     return this.http.get<PhaseUserPoint[]>(url, httpOptions)
       .pipe(
         catchError(this.errorHandler.handleError<PhaseUserPoint[]>('getPhaseUserPoints'))

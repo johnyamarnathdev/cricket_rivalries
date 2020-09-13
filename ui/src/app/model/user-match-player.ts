@@ -1,8 +1,8 @@
 export class UserMatchPlayer {
     playerName: string;
     playerNickName: string;
-    skill: string;
-    points: number;
-    team: string;
+    skillCode: string;
+    totalPoints: number;
+    teamNickName: string;
     owner: string;
 }

@@ -13,6 +13,13 @@ export class UserMatchPointsResolverService implements Resolve<UserMatchPoint>{
     resolve(route: ActivatedRouteSnapshot) {
         console.log(route.params);
         console.log(route.parent);
-        return this.service.getUserMatchPoints(route.parent.params['profileId'], route.params['matchId']);
+
+        if (route.params['matchId']) {
+            return this.service.getUserMatchPoints(route.parent.params['profileId'], route.params['matchId']);
+          } else {
+            return null;
+          }
+
+        
     }
 }
