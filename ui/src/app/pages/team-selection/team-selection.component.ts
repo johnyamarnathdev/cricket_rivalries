@@ -35,7 +35,7 @@ export class TeamSelectionComponent implements OnInit {
     battingPoints: '', bowlingPoints: '', fieldingPoints: '', bonusPoints: '', totalPoints:''
   };
 
-  @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatSort, { static: true }) sort: MatSort;
 
   constructor() {
     this.dataSource.data = this.players;

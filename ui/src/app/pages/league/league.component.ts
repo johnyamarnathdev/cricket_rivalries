@@ -30,7 +30,7 @@ export class LeagueComponent implements OnInit {
 
   displayedColumns: string[] = ["rank", "userName", "points", "transfersLeft"];
 
-  @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatSort, { static: true }) sort: MatSort;
 
   ngOnInit() {
     this.option.setValue("overall");
