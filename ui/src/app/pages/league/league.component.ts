@@ -4,7 +4,8 @@ import { OverallUserPoint } from "src/app/model/overall-user-point";
 import { FormControl } from "@angular/forms";
 import { TournamentPhase } from "src/app/model/tournament-phase";
 import { PhaseUserPointsService } from "src/app/services/phase-user-points.service";
-import { MatSort, MatTableDataSource } from "@angular/material";
+import {MatSort } from '@angular/material/sort';
+import {MatTableDataSource} from '@angular/material/table'
 
 @Component({
   selector: "app-league",
