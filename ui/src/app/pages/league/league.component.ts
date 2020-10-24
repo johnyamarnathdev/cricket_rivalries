@@ -4,7 +4,8 @@ import { OverallUserPoint } from "src/app/model/overall-user-point";
 import { FormControl } from "@angular/forms";
 import { TournamentPhase } from "src/app/model/tournament-phase";
 import { PhaseUserPointsService } from "src/app/services/phase-user-points.service";
-import { MatSort, MatTableDataSource } from "@angular/material";
+import {MatSort } from '@angular/material/sort';
+import {MatTableDataSource} from '@angular/material/table'
 
 @Component({
   selector: "app-league",
@@ -30,7 +31,7 @@ export class LeagueComponent implements OnInit {
 
   displayedColumns: string[] = ["rank", "userName", "points", "transfersLeft"];
 
-  @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatSort, { static: true }) sort: MatSort;
 
   ngOnInit() {
     this.option.setValue("overall");

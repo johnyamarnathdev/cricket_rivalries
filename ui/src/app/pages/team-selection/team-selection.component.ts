@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import {MatSort, MatTableDataSource } from '@angular/material';
+import {MatSort } from '@angular/material/sort';
+import {MatTableDataSource} from '@angular/material/table'
 
 @Component({
   selector: 'app-players',
@@ -35,7 +36,7 @@ export class TeamSelectionComponent implements OnInit {
     battingPoints: '', bowlingPoints: '', fieldingPoints: '', bonusPoints: '', totalPoints:''
   };
 
-  @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatSort, { static: true }) sort: MatSort;
 
   constructor() {
     this.dataSource.data = this.players;

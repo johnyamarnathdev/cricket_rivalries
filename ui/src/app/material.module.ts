@@ -1,20 +1,18 @@
 import { NgModule } from '@angular/core';
 
-import {
-  MatButtonModule,
-  MatMenuModule,
-  MatToolbarModule,
-  MatIconModule,
-  MatCardModule,
-  MatFormFieldModule,
-  MatInputModule,
-  MatTabsModule,
-  MatTableModule,
-  MatOptionModule,
-  MatSelectModule,
-  MatSortModule,
-  MatRippleModule
-} from '@angular/material';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatRippleModule } from '@angular/material/core';
+import { MatSelectModule } from '@angular/material/select';
+import { MatSortModule } from '@angular/material/sort';
+import { MatTableModule } from '@angular/material/table';
+
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -29,7 +27,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatInputModule,
     MatTabsModule,
     MatTableModule,
-    MatOptionModule,
     MatSelectModule,
     MatSortModule,
     FlexLayoutModule,
@@ -45,7 +42,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatInputModule,
     MatTabsModule,
     MatTableModule,
-    MatOptionModule,
     MatSelectModule,
     MatSortModule,
     FlexLayoutModule ,
