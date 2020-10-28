@@ -29,7 +29,7 @@ export class NavBarComponent implements OnInit {
       },
       {
         label: 'Players',
-        link: './players',
+        link: './players/1',
         index: 2
       },
       {

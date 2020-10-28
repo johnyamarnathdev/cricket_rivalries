@@ -18,6 +18,7 @@ import { UserMatchPointsResolverService } from "./resolvers/user-match-points-re
 import { UserTransfersResolverService } from "./resolvers/user-transfers-resolver.service";
 import { UsersResolverService } from './resolvers/users-resolver.service';
 import { TeamSelectionComponent } from './pages/team-selection/team-selection.component';
+import { PlayersResolverService } from './resolvers/players-resolver.service';
 
 const routes: Routes = [
   {
@@ -77,8 +78,11 @@ const routes: Routes = [
         ]
       },
       {
-        path: "players",
-        component: PlayersComponent
+        path: "players/:tournamentId",
+        component: PlayersComponent,
+        resolve: {
+          players: PlayersResolverService
+        }
         // data: { roles: [Role.Admin] }
       },
       {
