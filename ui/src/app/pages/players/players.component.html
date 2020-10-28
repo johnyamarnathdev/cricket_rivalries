@@ -1,7 +1,7 @@
 <div class=" basic-container ">
   <mat-table [dataSource]="dataSource" matSort matSortActive="name" matSortDirection="desc" matSortDisableClear>
 
-    <ng-container matColumnDef="name">
+    <ng-container matColumnDef="playerNickName">
       <mat-header-cell *matHeaderCellDef mat-sort-header MatSortHeaderIntl>
         <div fxLayout="column" fxLayoutAlign="start start">
           <mat-label>Player</mat-label>
@@ -12,10 +12,10 @@
           </mat-form-field>
         </div>
       </mat-header-cell>
-      <mat-cell *matCellDef="let player">{{player.name}}</mat-cell>
+      <mat-cell *matCellDef="let player">{{player.playerNickName}}</mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="team">
+    <ng-container matColumnDef="teamNickName">
       <mat-header-cell *matHeaderCellDef mat-sort-header>
         <div fxLayout="column" fxLayoutAlign="start start">
           <mat-label>Team</mat-label>
@@ -25,10 +25,10 @@
           </mat-form-field>
         </div>
       </mat-header-cell>
-      <mat-cell *matCellDef="let player">{{player.team}}</mat-cell>
+      <mat-cell *matCellDef="let player">{{player.teamNickName}}</mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="skill">
+    <ng-container matColumnDef="skillCode">
       <mat-header-cell *matHeaderCellDef mat-sort-header>
         <div fxLayout="column" fxLayoutAlign="start start">
           <mat-label>Skill</mat-label>
@@ -39,7 +39,7 @@
           </mat-form-field>
         </div>
       </mat-header-cell>
-      <mat-cell *matCellDef="let player">{{player.skill}}</mat-cell>
+      <mat-cell *matCellDef="let player">{{player.skillCode}}</mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="battingPoints">

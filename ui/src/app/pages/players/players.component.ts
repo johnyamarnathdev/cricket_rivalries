@@ -2,6 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import {MatSort } from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table'
+import { ActivatedRoute } from '@angular/router';
+import { Players } from 'src/app/model/players';
 
 
 @Component({
@@ -11,17 +13,6 @@ import {MatTableDataSource} from '@angular/material/table'
 })
 export class PlayersComponent implements OnInit {
 
-  players = [
-    {
-      name: 'John', team: 'team1', skill: 'Batsmen', 
-      battingPoints: 12, bowlingPoints: 34, fieldingPoints: 33, bonusPoints: 10, totalPoints: 125
-    },
-    {
-      name: 'Sarah', team: 'team2', skill: 'Bowler', 
-      battingPoints: 2, bowlingPoints: 74, fieldingPoints: 98, bonusPoints: 90, totalPoints: 905
-    }
-  ];
-
   //dataSource = new MatTableDataSource(this.people);
 
   nameFilter = new FormControl('');
@@ -29,41 +20,43 @@ export class PlayersComponent implements OnInit {
   teamFilter = new FormControl('');
  
   dataSource = new MatTableDataSource();
-  columnsToDisplay = ['name', 'team', 'skill', 'battingPoints', 'bowlingPoints', 'fieldingPoints', 'bonusPoints', 'totalPoints'];
+  columnsToDisplay = ['playerNickName', 'teamNickName', 'skillCode', 'battingPoints', 'bowlingPoints', 'fieldingPoints', 'bonusPoints', 'totalPoints'];
   filterValues = {
-    name: '',
-    team: '',
-    skill: '',
+    playerNickName: '',
+    teamNickName: '',
+    skillCode: '',
     battingPoints: '', bowlingPoints: '', fieldingPoints: '', bonusPoints: '', totalPoints:''
   };
 
   @ViewChild(MatSort, { static: true }) sort: MatSort;
 
-  constructor() {
-    this.dataSource.data = this.players;
+  constructor(private route: ActivatedRoute) {
     this.dataSource.filterPredicate = this.createFilter();
   }
 
   ngOnInit() {
-
+    this.route.data.subscribe((data: {players: Players[]}) => {
+      this.dataSource.data = data.players;
+    });
+    
     this.nameFilter.valueChanges
       .subscribe(
         name => {
-          this.filterValues.name = name;
+          this.filterValues.playerNickName = name;
           this.dataSource.filter = JSON.stringify(this.filterValues);
         }
       )
     this.skillFilter.valueChanges
       .subscribe(
         skill => {
-          this.filterValues.skill = skill;
+          this.filterValues.skillCode = skill;
           this.dataSource.filter = JSON.stringify(this.filterValues);
         }
       )
     this.teamFilter.valueChanges
       .subscribe(
-        team => {
-          this.filterValues.team = team;
+        teamName => {
+          this.filterValues.teamNickName = teamName;
           this.dataSource.filter = JSON.stringify(this.filterValues);
         }
       )
@@ -74,9 +67,9 @@ export class PlayersComponent implements OnInit {
   createFilter(): (data: any, filter: string) => boolean {
     let filterFunction = function(data, filter): boolean {
       let searchTerms = JSON.parse(filter);
-      return data.name.toLowerCase().indexOf(searchTerms.name) !== -1
-        && data.team.toString().toLowerCase().indexOf(searchTerms.team) !== -1
-        && data.skill.toLowerCase().indexOf(searchTerms.skill) !== -1;
+      return data.playerNickName.toLowerCase().indexOf(searchTerms.playerNickName.toLowerCase()) !== -1
+        && data.teamNickName.toString().toLowerCase().indexOf(searchTerms.teamNickName.toLowerCase()) !== -1
+        && data.skillCode.toLowerCase().indexOf(searchTerms.skillCode.toLowerCase()) !== -1;
     }
     return filterFunction;
   }
