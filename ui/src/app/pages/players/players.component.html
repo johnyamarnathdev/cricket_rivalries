@@ -2,9 +2,9 @@
   <mat-table [dataSource]="dataSource" matSort matSortActive="name" matSortDirection="desc" matSortDisableClear>
 
     <ng-container matColumnDef="playerNickName">
-      <mat-header-cell *matHeaderCellDef mat-sort-header MatSortHeaderIntl>
+      <mat-header-cell *matHeaderCellDef>
         <div fxLayout="column" fxLayoutAlign="start start">
-          <mat-label>Player</mat-label>
+          <mat-label mat-sort-header MatSortHeaderIntl>Player</mat-label>
           <mat-form-field class="filter" floatLabel="never">
             <mat-label>Search</mat-label>
             <input matInput [formControl]="nameFilter">
@@ -16,9 +16,9 @@
     </ng-container>
 
     <ng-container matColumnDef="teamNickName">
-      <mat-header-cell *matHeaderCellDef mat-sort-header>
+      <mat-header-cell *matHeaderCellDef>
         <div fxLayout="column" fxLayoutAlign="start start">
-          <mat-label>Team</mat-label>
+          <mat-label mat-sort-header>Team</mat-label>
           <mat-form-field class="filter" floatLabel="never">
             <mat-label>Search</mat-label>
             <input matInput [formControl]="teamFilter">
@@ -29,9 +29,9 @@
     </ng-container>
 
     <ng-container matColumnDef="skillCode">
-      <mat-header-cell *matHeaderCellDef mat-sort-header>
+      <mat-header-cell *matHeaderCellDef>
         <div fxLayout="column" fxLayoutAlign="start start">
-          <mat-label>Skill</mat-label>
+          <mat-label mat-sort-header>Skill</mat-label>
 
           <mat-form-field class="filter" floatLabel="never">
             <mat-label>Search</mat-label>
