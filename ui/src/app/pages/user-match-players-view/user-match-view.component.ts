@@ -31,15 +31,17 @@ export class UserMatchViewComponent implements OnInit {
 
   ngOnInit() {
     this.route.data.subscribe((data: { matchPlayers: UserMatchPlayer[] }) => {
-      this.matchPlayers = data.matchPlayers.sort((a, b) => {
-        if (a.totalPoints < b.totalPoints) {
-          return 1;
-        } else if (a.totalPoints > b.totalPoints) {
-          return -1;
-        } else {
-          return 0;
-        }
-      });
+      if (data.matchPlayers) {
+        this.matchPlayers = data.matchPlayers.sort((a, b) => {
+          if (a.totalPoints < b.totalPoints) {
+            return 1;
+          } else if (a.totalPoints > b.totalPoints) {
+            return -1;
+          } else {
+            return 0;
+          }
+        });
+      }
     });
     this.route.data.subscribe((data: { matchPoints: UserMatchPoint[] }) => {
       this.matchPoints = data.matchPoints;
