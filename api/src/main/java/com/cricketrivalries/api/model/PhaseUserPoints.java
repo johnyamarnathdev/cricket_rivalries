@@ -29,6 +29,9 @@ public class PhaseUserPoints {
 	@Column(name = "username")
 	private String userName;
 
+	@Column(name = "transfers_left")
+	private Integer transfersLeft;
+
 	public Long getProfileId() {
 		return profileId;
 	}
@@ -83,6 +86,14 @@ public class PhaseUserPoints {
 
 	public void setUserName(String userName) {
 		this.userName = userName;
+	}
+
+	public Integer getTransfersLeft() {
+		return transfersLeft;
+	}
+
+	public void setTransfersLeft(Integer transfersLeft) {
+		this.transfersLeft = transfersLeft;
 	}
 
 }

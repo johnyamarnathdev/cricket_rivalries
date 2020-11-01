@@ -29,7 +29,7 @@ export class LeagueComponent implements OnInit {
 
   tournamentId: number;
 
-  displayedColumns: string[] = ["rank", "userName", "points", "transfersLeft"];
+  displayedColumns: string[];
 
   @ViewChild(MatSort, { static: true }) sort: MatSort;
 
@@ -65,7 +65,9 @@ export class LeagueComponent implements OnInit {
     this.option.valueChanges.subscribe(data => {
       if ("overall" === data) {
         this.dataSource.data = this.overallUserPoints;
+        this.displayedColumns = ["rank", "userName", "points"];
       } else {
+        this.displayedColumns = ["rank", "userName", "points", "transfersLeft"];
         this.phasePointsService.getPhaseUserPoints(this.tournamentId, data).subscribe(data => {
           this.dataSource.data = data;
         });

@@ -29,7 +29,14 @@ export class UserMatchViewComponent implements OnInit {
 
   displayedColumns: string[] = ['skill', 'playerNickName', 'team', 'points', 'owner'];
 
+  selectedProfileId: number;
+
   ngOnInit() {
+    this.route.parent.params.subscribe(data => {
+      this.selectedProfileId = data.profileId;
+      console.log("adfasfdsaf", this.selectedProfileId);
+    });
+   
     this.route.data.subscribe((data: { matchPlayers: UserMatchPlayer[] }) => {
       if (data.matchPlayers) {
         this.matchPlayers = data.matchPlayers.sort((a, b) => {

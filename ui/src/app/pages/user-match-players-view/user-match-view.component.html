@@ -10,31 +10,42 @@
           The actual rendered columns are set as a property on the row definition" -->
 
   <ng-container matColumnDef="skill">
-      <th mat-header-cell *matHeaderCellDef fxFlex="20%" fxLayoutAlign="start center">Skill</th>
-      <td mat-cell *matCellDef="let element" fxFlex="20%" fxLayoutAlign="start center">{{ element.skillCode }}</td>
+      <th mat-header-cell *matHeaderCellDef >Skill</th>
+      <td mat-cell *matCellDef="let element" >{{ element.skillCode }}</td>
   </ng-container>
 
   <ng-container matColumnDef="playerNickName">
-      <th mat-header-cell *matHeaderCellDef fxFlex="20%" fxLayoutAlign="start center">Name</th>
-      <td mat-cell *matCellDef="let element" fxFlex="20%" fxLayoutAlign="start center">{{ element.playerNickName }}</td>
+      <th mat-header-cell *matHeaderCellDef >Name</th>
+      <td mat-cell *matCellDef="let element" >
+        {{ element.playerNickName }}
+        
+          <span *ngIf = "element.owner.profileId == selectedProfileId" class="material-icons">
+            how_to_reg
+          </span>
+        
+      </td>
   </ng-container>
 
   <ng-container matColumnDef="team">
-      <th mat-header-cell *matHeaderCellDef fxFlex="15%" fxLayoutAlign="start center">Team</th>
-      <td mat-cell *matCellDef="let element" fxFlex="15%" fxLayoutAlign="start center">{{ element.teamNickName }}</td>
+      <th mat-header-cell *matHeaderCellDef >Team</th>
+      <td mat-cell *matCellDef="let element" >{{ element.teamNickName }}</td>
   </ng-container>
 
   <ng-container matColumnDef="points">
-      <th mat-header-cell *matHeaderCellDef fxFlex="15%" fxLayoutAlign="start center">Points</th>
-      <td mat-cell *matCellDef="let element" fxFlex="15%" fxLayoutAlign="start center">
+      <th mat-header-cell *matHeaderCellDef  >Points</th>
+      <td mat-cell *matCellDef="let element" >
         <ng-template #elseBlock>-</ng-template>
         <div *ngIf="element.totalPoints; else elseBlock" >{{element.totalPoints}}</div>
       </td>
   </ng-container>
 
   <ng-container matColumnDef="owner">
-      <th mat-header-cell *matHeaderCellDef fxFlex="30%" fxLayoutAlign="start center">Owner</th>
-      <td mat-cell *matCellDef="let element" fxFlex="30%" fxLayoutAlign="start center">{{ element.owner != null ? element.owner.userName : '-' }}</td>
+      <th mat-header-cell *matHeaderCellDef  fxHide.lt-sm>
+        Owned By
+      </th>
+      <td mat-cell *matCellDef="let element"  fxHide.lt-sm>
+        {{ element.owner != null ? element.owner.userName : '-' }}
+      </td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

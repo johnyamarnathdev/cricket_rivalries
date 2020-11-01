@@ -19,13 +19,11 @@
       <mat-cell *matCellDef="let element"> {{element.userName}} </mat-cell>
     </ng-container>
 
-    <!-- Weight Column -->
     <ng-container matColumnDef="points">
       <mat-header-cell *matHeaderCellDef mat-sort-header> Total Points </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.points}} </mat-cell>
     </ng-container>
 
-    <!-- Symbol Column -->
     <ng-container matColumnDef="transfersLeft">
       <mat-header-cell *matHeaderCellDef mat-sort-header> Transfers Left </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.transfersLeft}} </mat-cell>

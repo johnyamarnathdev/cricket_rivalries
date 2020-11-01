@@ -14,6 +14,8 @@ public class PhaseUserPointsDTO {
 
 	private String userName;
 
+	private Integer transfersLeft;
+
 	public Long getProfileId() {
 		return profileId;
 	}
@@ -60,6 +62,14 @@ public class PhaseUserPointsDTO {
 
 	public void setUserName(String userName) {
 		this.userName = userName;
+	}
+
+	public Integer getTransfersLeft() {
+		return transfersLeft;
+	}
+
+	public void setTransfersLeft(Integer transfersLeft) {
+		this.transfersLeft = transfersLeft;
 	}
 
 }
