@@ -28,25 +28,18 @@ export class UserMatchComponent implements OnInit {
   users: User[];
 
   selected: any;
+
   ngOnInit() {
     this.route.data.subscribe(
       (data: { tournamentMatches: TournamentMatch[] }) => {
         this.tournamentMatches = data.tournamentMatches;
-      }
-    );
+      });
 
     this.route.data.subscribe((data: { users: User[] }) => {
       this.users = data.users;
     });
 
     var recentMatch = this.tournamentMatches
-      .sort((a, b) =>{
-         let datea = new Date(a.matchDateTime).getTime();
-         let dateb = new Date(b.matchDateTime).getTime();
-
-        return datea < dateb ? 1 : dateb < datea ? -1 : 0
-      }
-      )
       .find(match => {
         return new Date(match.matchDateTime).getTime() < new Date().getTime();
       });

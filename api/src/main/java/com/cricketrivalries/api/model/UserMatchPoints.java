@@ -17,7 +17,7 @@ public class UserMatchPoints {
     @Column(name = "POINTS")
     private Long points;
 
-    @Column(name = "RANK")
+    @Column(name = "RANKS")
     private Integer rank;
 
     public Long getMatchId() {

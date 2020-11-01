@@ -3,6 +3,8 @@ package com.cricketrivalries.api.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 /**
  * UserMatch
@@ -11,6 +13,9 @@ import javax.persistence.Id;
 public class UserMatchPlerysPoints {
 
     @Id
+    @Column(name= "id")
+    private Long id;
+
     @Column(name = "profile_id")
     private Long profileId;
 
@@ -32,12 +37,14 @@ public class UserMatchPlerysPoints {
     @Column(name = "team_nick_name")
     private String teamNickName;
 
-    @Column(name = "owner")
-    private String owner;
+    @OneToOne
+    @JoinColumn(name = "owner")
+    private User owner;
 
     @Column(name = "total_points")
     private Integer totalPoints;
 
+    
     public String getPlayerName() {
         return playerName;
     }
@@ -78,11 +85,11 @@ public class UserMatchPlerysPoints {
         this.teamNickName = teamNickName;
     }
 
-    public String getOwner() {
+    public User getOwner() {
         return owner;
     }
 
-    public void setOwner(String owner) {
+    public void setOwner(User owner) {
         this.owner = owner;
     }
 
@@ -108,6 +115,14 @@ public class UserMatchPlerysPoints {
 
     public void setMatchId(Long matchId) {
         this.matchId = matchId;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
 }

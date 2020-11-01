@@ -26,12 +26,15 @@
 
   <ng-container matColumnDef="points">
       <th mat-header-cell *matHeaderCellDef fxFlex="15%" fxLayoutAlign="start center">Points</th>
-      <td mat-cell *matCellDef="let element" fxFlex="15%" fxLayoutAlign="start center">{{ element.totalPoints }}</td>
+      <td mat-cell *matCellDef="let element" fxFlex="15%" fxLayoutAlign="start center">
+        <ng-template #elseBlock>-</ng-template>
+        <div *ngIf="element.totalPoints; else elseBlock" >{{element.totalPoints}}</div>
+      </td>
   </ng-container>
 
   <ng-container matColumnDef="owner">
       <th mat-header-cell *matHeaderCellDef fxFlex="30%" fxLayoutAlign="start center">Owner</th>
-      <td mat-cell *matCellDef="let element" fxFlex="30%" fxLayoutAlign="start center">{{ element.owner }}</td>
+      <td mat-cell *matCellDef="let element" fxFlex="30%" fxLayoutAlign="start center">{{ element.owner != null ? element.owner.userName : '-' }}</td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

@@ -43,31 +43,33 @@
     </ng-container>
 
     <ng-container matColumnDef="battingPoints">
-      <mat-header-cell *matHeaderCellDef mat-sort-header>
+      <mat-header-cell *matHeaderCellDef mat-sort-header fxHide.lt-sm>
+        <div fxLayout="column" fxLayoutAlign="start start">
         <mat-label>Batting Points</mat-label>
+      </div>
       </mat-header-cell>
-      <mat-cell *matCellDef="let player">{{player.battingPoints}}</mat-cell>
+      <mat-cell *matCellDef="let player" fxHide.lt-sm>{{player.battingPoints}}</mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="bowlingPoints">
-      <mat-header-cell *matHeaderCellDef mat-sort-header>
+      <mat-header-cell *matHeaderCellDef mat-sort-header fxHide.lt-sm>
         <mat-label>Bowling Points</mat-label>
       </mat-header-cell>
-      <mat-cell *matCellDef="let player">{{player.bowlingPoints}}</mat-cell>
+      <mat-cell *matCellDef="let player" fxHide.lt-sm>{{player.bowlingPoints}}</mat-cell>
     </ng-container>
     
     <ng-container matColumnDef="fieldingPoints">
-      <mat-header-cell *matHeaderCellDef mat-sort-header>
+      <mat-header-cell *matHeaderCellDef mat-sort-header fxHide.lt-sm>
         <mat-label>Feilding Points</mat-label>
       </mat-header-cell>
-      <mat-cell *matCellDef="let player">{{player.fieldingPoints}}</mat-cell>
+      <mat-cell *matCellDef="let player" fxHide.lt-sm>{{player.fieldingPoints}}</mat-cell>
     </ng-container>
     
     <ng-container matColumnDef="bonusPoints">
-      <mat-header-cell *matHeaderCellDef mat-sort-header>
+      <mat-header-cell *matHeaderCellDef mat-sort-header fxHide.lt-sm>
         <mat-label>Bonus Points</mat-label>
       </mat-header-cell>
-      <mat-cell *matCellDef="let player">{{player.bonusPoints}}</mat-cell>
+      <mat-cell *matCellDef="let player" fxHide.lt-sm>{{player.bonusPoints}}</mat-cell>
     </ng-container>
     
     <ng-container matColumnDef="totalPoints">

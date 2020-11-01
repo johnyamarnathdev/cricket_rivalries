@@ -16,10 +16,9 @@
     <mat-form-field>
       <mat-select [(formControl)]="matchFormControl">
         <mat-option
-          *ngFor="let match of tournamentMatches"
-          [value]="match.matchId"
-          >{{ match.matchId }}</mat-option
-        >
+          *ngFor="let match of tournamentMatches" [value]="match.matchId">
+          {{ match.matchId }}
+        </mat-option>
       </mat-select>
     </mat-form-field>
   </div>

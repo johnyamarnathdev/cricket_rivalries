@@ -1,5 +1,7 @@
 package com.cricketrivalries.api.dto;
 
+import com.cricketrivalries.api.model.User;
+
 public class UserMatchPlayerPointsDTO {
     private Long profileId;
 
@@ -15,7 +17,7 @@ public class UserMatchPlayerPointsDTO {
 
     private String teamNickName;
 
-    private String owner;
+    private User owner;
 
     private Integer totalPoints;
 
@@ -75,11 +77,11 @@ public class UserMatchPlayerPointsDTO {
         this.teamNickName = teamNickName;
     }
 
-    public String getOwner() {
+    public User getOwner() {
         return owner;
     }
 
-    public void setOwner(String owner) {
+    public void setOwner(User owner) {
         this.owner = owner;
     }
 
