@@ -5,7 +5,6 @@ import {
   OnChanges,
   SimpleChanges
 } from "@angular/core";
-import { Observable } from "rxjs";
 import { ActivatedRoute } from "@angular/router";
 import { UserMatchPlayer } from "src/app/model/user-match-player";
 import { UserMatchPoint } from "src/app/model/user-match-point";
@@ -34,7 +33,6 @@ export class UserMatchViewComponent implements OnInit {
   ngOnInit() {
     this.route.parent.params.subscribe(data => {
       this.selectedProfileId = data.profileId;
-      console.log("adfasfdsaf", this.selectedProfileId);
     });
    
     this.route.data.subscribe((data: { matchPlayers: UserMatchPlayer[] }) => {
@@ -50,15 +48,9 @@ export class UserMatchViewComponent implements OnInit {
         });
       }
     });
+
     this.route.data.subscribe((data: { matchPoints: UserMatchPoint[] }) => {
       this.matchPoints = data.matchPoints;
     });
-    // this.route.data.subscribe((data: { transfersLeft: UserTransfer }) => {
-    //   this.transfersLeft = data.transfersLeft;
-    // });
   }
-
-  // ngOnChanges(changes: SimpleChanges) {
-  //   console.log(changes.user);
-  // }
 }
