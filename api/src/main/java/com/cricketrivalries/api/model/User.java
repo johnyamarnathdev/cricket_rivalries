@@ -4,22 +4,22 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-@Entity(name = "user_profile")
+@Entity(name = "USER_PROFILE")
 public class User {
 	public User() {
 	}
 
 	@Id
-	@Column(name = "profile_id")
+	@Column(name = "PROFILE_ID")
 	private Long profileId;
 
-	@Column(name = "first_name")
+	@Column(name = "FIRST_NAME")
 	private String firstName;
 
-	@Column(name = "last_name")
+	@Column(name = "LAST_NAME")
 	private String lastName;
 
-	@Column(name = "username")
+	@Column(name = "USERNAME")
 	private String userName;
 
 	public String getFirstName() {

@@ -19,7 +19,7 @@
       <td mat-cell *matCellDef="let element" >
         {{ element.playerNickName }}
         
-          <span *ngIf = "element.owner.profileId == selectedProfileId" class="material-icons">
+          <span *ngIf = "element.owner != null && element.owner.profileId == selectedProfileId" class="material-icons">
             how_to_reg
           </span>
         

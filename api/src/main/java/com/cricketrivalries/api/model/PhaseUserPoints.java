@@ -4,32 +4,32 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-@Entity(name = "phase_user_points_vw")
+@Entity(name = "PHASE_USER_POINTS_VW")
 public class PhaseUserPoints {
 
 	@Id
-	@Column(name = "profile_id")
+	@Column(name = "PROFILE_ID")
 	private Long profileId;
 
-	@Column(name = "tournamentId")
+	@Column(name = "TOURNAMENT_ID")
 	private Integer tournamentId;
 
-	@Column(name = "points")
+	@Column(name = "POINTS")
 	private Integer points;
 
-	@Column(name = "phase_rank")
+	@Column(name = "PHASE_RANK")
 	private Integer rank;
 
-	@Column(name = "phase_id")
+	@Column(name = "PHASE_ID")
 	private Integer phaseId;
 
-	@Column(name = "phase_no")
+	@Column(name = "PHASE_NO")
 	private String phaseNo;
 
-	@Column(name = "username")
+	@Column(name = "USERNAME")
 	private String userName;
 
-	@Column(name = "transfers_left")
+	@Column(name = "TRANSFERS_LEFT")
 	private Integer transfersLeft;
 
 	public Long getProfileId() {

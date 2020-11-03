@@ -6,23 +6,23 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
-@Entity(name = "user_tournament_points")
+@Entity(name = "USER_TOURNAMENT_POINTS")
 public class UserTournamentPoints {
     @Id
-    @Column(name = "id")
+    @Column(name = "ID")
     private Long id;
 
-    @Column(name = "tournamentId")
+    @Column(name = "TOURNAMENTID")
 	private Integer tournamentId;
 
-	@Column(name = "points")
+	@Column(name = "POINTS")
 	private Integer points;
 
-	@Column(name = "ranks")
+	@Column(name = "RANKS")
 	private Integer ranks;
 
 	@OneToOne
-    @JoinColumn(name = "profile_id")
+    @JoinColumn(name = "PROFILE_ID")
     private User user;
 
     public Long getId() {

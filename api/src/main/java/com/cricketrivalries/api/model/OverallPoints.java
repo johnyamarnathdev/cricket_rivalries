@@ -4,20 +4,20 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-@Entity(name = "overall_user_points_vw")
+@Entity(name = "OVERALL_USER_POINTS_VW")
 public class OverallPoints {
 
 	@Id
-	@Column(name = "profile_id")
+	@Column(name = "PROFILE_ID")
 	private Long profileId;
 
-	@Column(name = "points")
+	@Column(name = "POINTS")
 	private int points;
 
-	@Column(name = "overall_rank")
+	@Column(name = "OVERALL_RANK")
 	private int rank;
 
-	@Column(name = "username")
+	@Column(name = "USERNAME")
 	private String userName;
 
 	public Long getProfileId() {

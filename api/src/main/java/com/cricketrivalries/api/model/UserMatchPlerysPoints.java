@@ -9,39 +9,39 @@ import javax.persistence.OneToOne;
 /**
  * UserMatch
  */
-@Entity(name = "user_match_points_vw")
+@Entity(name = "USER_MATCH_POINTS_VW")
 public class UserMatchPlerysPoints {
 
     @Id
-    @Column(name= "id")
+    @Column(name= "ID")
     private Long id;
 
-    @Column(name = "profile_id")
+    @Column(name = "PROFILE_ID")
     private Long profileId;
 
-    @Column(name = "match_id")
+    @Column(name = "MATCH_ID")
     private Long matchId;
 
-    @Column(name = "player_name")
+    @Column(name = "PLAYER_NAME")
     private String playerName;
 
-    @Column(name = "player_nick_name")
+    @Column(name = "PLAYER_NICK_NAME")
     private String playerNickName;
 
-    @Column(name = "skill_code")
+    @Column(name = "SKILL_CODE")
     private String skillCode;
 
-    @Column(name = "team_name")
+    @Column(name = "TEAM_NAME")
     private String teamName;
 
-    @Column(name = "team_nick_name")
+    @Column(name = "TEAM_NICK_NAME")
     private String teamNickName;
 
     @OneToOne
-    @JoinColumn(name = "owner")
+    @JoinColumn(name = "OWNER")
     private User owner;
 
-    @Column(name = "total_points")
+    @Column(name = "TOTAL_POINTS")
     private Integer totalPoints;
 
     

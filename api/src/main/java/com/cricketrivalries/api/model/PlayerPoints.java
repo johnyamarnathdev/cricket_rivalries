@@ -4,41 +4,41 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-@Entity(name = "player_match_points")
+@Entity(name = "PLAYER_MATCH_POINTS")
 public class PlayerPoints {
 
     @Id
-    @Column(name = "player_id")
+    @Column(name = "PLAYER_ID")
     private Long playerId;
 
-    @Column(name = "player_name")
+    @Column(name = "PLAYER_NAME")
     private String playerName;
 
-    @Column(name = "player_nick_name")
+    @Column(name = "PLAYER_NICK_NAME")
     private String playerNickName;
 
-    @Column(name = "skill_code")
+    @Column(name = "SKILL_CODE")
     private String skillCode;
 
-    @Column(name = "team_name")
+    @Column(name = "TEAM_NAME")
     private String teamName;
 
-    @Column(name = "team_nick_name")
+    @Column(name = "TEAM_NICK_NAME")
     private String teamNickName;
 
-    @Column(name = "bowling_points")
+    @Column(name = "BOWLING_POINTS")
     private Long bowlingPoints;
 
-    @Column(name = "batting_points")
+    @Column(name = "BATTING_POINTS")
     private Long battingPoints;
 
-    @Column(name = "fielding_points")
+    @Column(name = "FIELDING_POINTS")
     private Long fieldingPoints;
 
-    @Column(name = "bonus_points")
+    @Column(name = "BONUS_POINTS")
     private Long bonusPoints;
 
-    @Column(name = "total_points")
+    @Column(name = "TOTAL_POINTS")
     private Long totalPoints;
 
     public Long getPlayerId() {

@@ -6,22 +6,22 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-@Entity(name = "tournament_phases")
+@Entity(name = "TOURNAMENT_PHASES")
 public class TournamentPhase {
     @Id
-    @Column(name = "phase_id")
+    @Column(name = "PHASE_ID")
     private Long phaseId;
 
-    @Column(name = "phase_no")
+    @Column(name = "PHASE_NO")
     private Long phaseNo;
 
-    @Column(name = "tournament_id")
+    @Column(name = "TOURNAMENT_ID")
     private Integer tournamentId;
 
-    @Column(name = "start_date")
+    @Column(name = "START_DATE")
     private Date startDate;
 
-    @Column(name = "end_date")
+    @Column(name = "END_DATE")
     private Date endDate;
 
     @Column(name = "NO_OF_TRANSFERS_ALLOWED")
